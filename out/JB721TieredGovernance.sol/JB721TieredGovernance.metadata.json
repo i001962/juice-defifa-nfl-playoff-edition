@@ -527,7 +527,7 @@
           {
             "indexed": false,
             "internalType": "address",
-            "name": "callre",
+            "name": "caller",
             "type": "address"
           }
         ],
@@ -1250,6 +1250,11 @@
                 "internalType": "bool",
                 "name": "lockManualMintingChanges",
                 "type": "bool"
+              },
+              {
+                "internalType": "bool",
+                "name": "preventOverspending",
+                "type": "bool"
               }
             ],
             "internalType": "struct JBTiered721Flags",
@@ -1716,6 +1721,114 @@
         "type": "function"
       },
       {
+        "inputs": [
+          {
+            "internalType": "uint256[]",
+            "name": "_tokenIds",
+            "type": "uint256[]"
+          },
+          {
+            "components": [
+              {
+                "internalType": "contract IJBPaymentTerminal",
+                "name": "terminal",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "holder",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "projectId",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "currentFundingCycleConfiguration",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "tokenCount",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "overflow",
+                "type": "uint256"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "currency",
+                    "type": "uint256"
+                  }
+                ],
+                "internalType": "struct JBTokenAmount",
+                "name": "reclaimAmount",
+                "type": "tuple"
+              },
+              {
+                "internalType": "bool",
+                "name": "useTotalOverflow",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "redemptionRate",
+                "type": "uint256"
+              },
+              {
+                "internalType": "string",
+                "name": "memo",
+                "type": "string"
+              },
+              {
+                "internalType": "bytes",
+                "name": "metadata",
+                "type": "bytes"
+              }
+            ],
+            "internalType": "struct JBRedeemParamsData",
+            "name": "",
+            "type": "tuple"
+          }
+        ],
+        "name": "redemptionWeightOf",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
         "inputs": [],
         "name": "renounceOwnership",
         "outputs": [],
@@ -1953,6 +2066,109 @@
       {
         "inputs": [
           {
+            "components": [
+              {
+                "internalType": "contract IJBPaymentTerminal",
+                "name": "terminal",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "holder",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "projectId",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "currentFundingCycleConfiguration",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "tokenCount",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "overflow",
+                "type": "uint256"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "currency",
+                    "type": "uint256"
+                  }
+                ],
+                "internalType": "struct JBTokenAmount",
+                "name": "reclaimAmount",
+                "type": "tuple"
+              },
+              {
+                "internalType": "bool",
+                "name": "useTotalOverflow",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "redemptionRate",
+                "type": "uint256"
+              },
+              {
+                "internalType": "string",
+                "name": "memo",
+                "type": "string"
+              },
+              {
+                "internalType": "bytes",
+                "name": "metadata",
+                "type": "bytes"
+              }
+            ],
+            "internalType": "struct JBRedeemParamsData",
+            "name": "",
+            "type": "tuple"
+          }
+        ],
+        "name": "totalRedemptionWeight",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
             "internalType": "address",
             "name": "from",
             "type": "address"
@@ -2067,7 +2283,7 @@
             "_tier": "The tier to check within."
           }
         },
-        "initialize(uint256,address,string,string,address,string,address,string,((uint80,uint48,uint40,uint16,uint16,address,bytes32,bool,bool,bool)[],uint256,uint256,address),address,(bool,bool,bool))": {
+        "initialize(uint256,address,string,string,address,string,address,string,((uint80,uint48,uint40,uint16,uint16,address,bytes32,bool,bool,bool)[],uint256,uint256,address),address,(bool,bool,bool,bool))": {
           "params": {
             "_baseUri": "A URI to use as a base for full token URIs.",
             "_contractUri": "A URI where contract metadata can be found. ",
@@ -2139,6 +2355,14 @@
             "reclaimAmount": "The amount that should be reclaimed from the treasury."
           }
         },
+        "redemptionWeightOf(uint256[],(address,address,uint256,uint256,uint256,uint256,uint256,(address,uint256,uint256,uint256),bool,uint256,string,bytes))": {
+          "params": {
+            "_tokenIds": "The IDs of the tokens to get the cumulative redemption weight of."
+          },
+          "returns": {
+            "_0": "The weight."
+          }
+        },
         "renounceOwnership()": {
           "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
         },
@@ -2202,6 +2426,11 @@
           },
           "returns": {
             "_0": "The token URI corresponding with the tier or the tokenUriResolver URI."
+          }
+        },
+        "totalRedemptionWeight((address,address,uint256,uint256,uint256,uint256,uint256,(address,uint256,uint256,uint256),bool,uint256,string,bytes))": {
+          "returns": {
+            "_0": "The total weight."
           }
         },
         "transferFrom(address,address,uint256)": {
@@ -2299,6 +2528,9 @@
         "redeemParams((address,address,uint256,uint256,uint256,uint256,uint256,(address,uint256,uint256,uint256),bool,uint256,string,bytes))": {
           "notice": " Part of IJBFundingCycleDataSource, this function gets called when a project's token holders redeem."
         },
+        "redemptionWeightOf(uint256[],(address,address,uint256,uint256,uint256,uint256,uint256,(address,uint256,uint256,uint256),bool,uint256,string,bytes))": {
+          "notice": "The cumulative weight the given token IDs have in redemptions compared to the `_totalRedemptionWeight`. "
+        },
         "setBaseUri(string)": {
           "notice": "Set a base token URI."
         },
@@ -2325,6 +2557,9 @@
         },
         "tokenURI(uint256)": {
           "notice": "The metadata URI of the provided token ID."
+        },
+        "totalRedemptionWeight((address,address,uint256,uint256,uint256,uint256,uint256,(address,uint256,uint256,uint256),bool,uint256,string,bytes))": {
+          "notice": "The cumulative weight that all token IDs have in redemptions. "
         }
       },
       "notice": "A tiered 721 delegate where each NFT can be used for on chain governance, with votes delegatable per tier.",
@@ -2363,11 +2598,11 @@
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/JBTiered721Delegate.sol": {
-      "keccak256": "0x741264950a8b719fa0ee761fa58096336db683650967b5e6a12fe943adb2d2a9",
+      "keccak256": "0x56c0561616fa2ce63ba0e4e45b89f6f7c1aef00f1218c11211fb9b0289736264",
       "license": "MIT",
       "urls": [
-        "bzz-raw://7cf5ef615353fe7800a2cf5a4579a826890ca61dac848906e1e29b725e445d04",
-        "dweb:/ipfs/QmQh1qfJhiS8AQEFyot6jDspqivbPgcyw2W4S6vA5GSwXi"
+        "bzz-raw://ff83c1e4852f8fcc17c1786b9ac414a32334acf27d85a1c847eb45c1b55f3975",
+        "dweb:/ipfs/QmXiKXnovdBJevAuNgPzAPDmJsvTuFhCLKPoLxMQ7bywkF"
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/abstract/ERC721.sol": {
@@ -2379,11 +2614,11 @@
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/abstract/JB721Delegate.sol": {
-      "keccak256": "0x7faae15bf7e3a1ab62b2dfce08ac612612d73c88781edb4b0b7154a742bf81d3",
+      "keccak256": "0xef3ea0cce52d3a47506d2de097ad5215ae73d8bf6213fcd38838fa7d5f0c5e31",
       "license": "MIT",
       "urls": [
-        "bzz-raw://31f5383d49c06658072d460c57b90a58df80ed91a24b0b0e64b08d15542fa876",
-        "dweb:/ipfs/QmSPyEL9aX8VrM29zFcGaNUhqVYeFR5vNgSAfnEZrrP8uR"
+        "bzz-raw://042b746fbe48ae0e6a017af3cc55067c99e04470e8a2f417f6f6cf1643f8b89d",
+        "dweb:/ipfs/QmS85ystUsceWRb7m3HaigkKqVXdt73FAjARtxvKJeyguA"
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/interfaces/IJB721Delegate.sol": {
@@ -2395,11 +2630,11 @@
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/interfaces/IJB721TieredGovernance.sol": {
-      "keccak256": "0x2919ae0682a56517691009fa632ac5318633a52499314dbbc21e0414703de4f3",
+      "keccak256": "0xd52f20b6dc2b2e6d741865b8d615f0152c092d68613c58b43a1c45154573be35",
       "license": "MIT",
       "urls": [
-        "bzz-raw://e54f0de0dae576a7dd6534f44b532001826b9c571fde51b9606c838bb8c55f05",
-        "dweb:/ipfs/QmbXptLGUcXTr7XnMypAoDP6ToMFhjR7vZ7YHJbXhjtaPX"
+        "bzz-raw://4455c3916266a566ac5f04d77937090f4aa5829535eefebcd349b17f11e5c219",
+        "dweb:/ipfs/Qme2h96YKBzFXSnC8CMzEWxte93ZzEGck8MkmVMyeZN4S4"
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/interfaces/IJBTiered721Delegate.sol": {
@@ -2411,11 +2646,11 @@
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/interfaces/IJBTiered721DelegateStore.sol": {
-      "keccak256": "0xcf1b6e7936510e113ecfdf9ec19a53fd4bc76bbdd6fb45277b3f87dad6a80392",
+      "keccak256": "0x1f360dc9d5d181665c40063abc9f390b942f80fa8772e3d99ef9986a3cae3ebc",
       "license": "MIT",
       "urls": [
-        "bzz-raw://3837762449cbb5582dd35cf87857c71fe49d5ee723d4860fc5ff5265415ea57e",
-        "dweb:/ipfs/QmbN8ULJmgnfiD8tbKLrKE8KJDzd4xwqopSVq6DWHrMWiT"
+        "bzz-raw://266bcce6d9593f1cfcc53fe60b4752670e273a050fec0c9aae712096fe3d9b16",
+        "dweb:/ipfs/QmR6x3ZyYKcf9ncyeEZpTXdTpXbUQw588R93fnFQ9vhsib"
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/libraries/JBIpfsDecoder.sol": {
@@ -2459,11 +2694,11 @@
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/structs/JBTiered721Flags.sol": {
-      "keccak256": "0xe81a246492912a874aa6dd53a9df34ea8eceaf9b8eb7fdb673089f9d2c9ec08d",
+      "keccak256": "0x42f9625c893559b44bbe79d7fc3f6190a0dceea673b6137ef393c44d517a9ae2",
       "license": "MIT",
       "urls": [
-        "bzz-raw://70343f0d7873171295ad1195b31233c09a2e8ec81aa53da398f2d208cabe9418",
-        "dweb:/ipfs/QmNhLf7FsLVYduT4Kgg3e9J1FYbgEqP8BuNRiRndw7vKv7"
+        "bzz-raw://b13d3d700323e73f4f2f67b3c41b20ded126009a4ac2acec0fba444d0ce6032f",
+        "dweb:/ipfs/QmWkbrzcNDtFxdApDBy8rCsBLu3ovzzZJeA9Tin9pcncSs"
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/structs/JBTiered721FundingCycleMetadata.sol": {

@@ -291,6 +291,11 @@
                 "internalType": "bool",
                 "name": "lockManualMintingChanges",
                 "type": "bool"
+              },
+              {
+                "internalType": "bool",
+                "name": "preventOverspending",
+                "type": "bool"
               }
             ],
             "internalType": "struct JBTiered721Flags",
@@ -518,6 +523,11 @@
                 "internalType": "bool",
                 "name": "lockManualMintingChanges",
                 "type": "bool"
+              },
+              {
+                "internalType": "bool",
+                "name": "preventOverspending",
+                "type": "bool"
               }
             ],
             "internalType": "struct JBTiered721Flags",
@@ -554,35 +564,6 @@
             "internalType": "uint256[]",
             "name": "tokenIds",
             "type": "uint256[]"
-          },
-          {
-            "internalType": "uint256",
-            "name": "leftoverAmount",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "_amount",
-            "type": "uint256"
-          }
-        ],
-        "name": "recordMintBestAvailableTier",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "tokenId",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "tierId",
-            "type": "uint256"
           },
           {
             "internalType": "uint256",
@@ -1244,7 +1225,7 @@
             "_tokenIds": "The IDs of the tokens burned."
           }
         },
-        "recordFlags((bool,bool,bool))": {
+        "recordFlags((bool,bool,bool,bool))": {
           "params": {
             "_flags": "The flag to sets."
           }
@@ -1258,16 +1239,6 @@
           "returns": {
             "leftoverAmount": "The amount leftover after the mint.",
             "tokenIds": "The IDs of the tokens minted."
-          }
-        },
-        "recordMintBestAvailableTier(uint256)": {
-          "params": {
-            "_amount": "The amount to base the mint on."
-          },
-          "returns": {
-            "leftoverAmount": "The amount leftover after the mint. ",
-            "tierId": "The ID of the tier minted from.",
-            "tokenId": "The token ID minted."
           }
         },
         "recordMintReservesFor(uint256,uint256)": {
@@ -1474,14 +1445,11 @@
         "recordBurn(uint256[])": {
           "notice": "Records burned tokens."
         },
-        "recordFlags((bool,bool,bool))": {
+        "recordFlags((bool,bool,bool,bool))": {
           "notice": "Sets flags. "
         },
         "recordMint(uint256,uint16[],bool)": {
           "notice": "Mints a token in all provided tiers."
-        },
-        "recordMintBestAvailableTier(uint256)": {
-          "notice": "Mints a token in the best available tier."
         },
         "recordMintReservesFor(uint256,uint256)": {
           "notice": "Mint a token within the tier for the provided value."
@@ -1572,19 +1540,19 @@
   },
   "sources": {
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/JBTiered721DelegateStore.sol": {
-      "keccak256": "0x09ba8cbb0134b1d4ca342ecd268b3605764459b7ef1f7c9f80223a5228c2527c",
+      "keccak256": "0xc0e9db795a15496438b56f8a7eba5138f08579c0ad46db544503bf41bddb377c",
       "license": "MIT",
       "urls": [
-        "bzz-raw://00d1a8d015b4a2df7dd10a0e6b18f74870c4b6ae561efaef78ea2a8180da0a70",
-        "dweb:/ipfs/QmTsnWCi7wuXFUuyhn1MV3sYCfGv9aoknu8JxEN9AoBNr1"
+        "bzz-raw://a18030c9046fb8c0e3ed0720fe1b4c21e9dd5569e1d35e2387551030f8fe5e4a",
+        "dweb:/ipfs/QmRpoFx5b45AmB1pQVJPtyHKofTYNJyzLw6DjPVWPKGf5C"
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/interfaces/IJBTiered721DelegateStore.sol": {
-      "keccak256": "0xcf1b6e7936510e113ecfdf9ec19a53fd4bc76bbdd6fb45277b3f87dad6a80392",
+      "keccak256": "0x1f360dc9d5d181665c40063abc9f390b942f80fa8772e3d99ef9986a3cae3ebc",
       "license": "MIT",
       "urls": [
-        "bzz-raw://3837762449cbb5582dd35cf87857c71fe49d5ee723d4860fc5ff5265415ea57e",
-        "dweb:/ipfs/QmbN8ULJmgnfiD8tbKLrKE8KJDzd4xwqopSVq6DWHrMWiT"
+        "bzz-raw://266bcce6d9593f1cfcc53fe60b4752670e273a050fec0c9aae712096fe3d9b16",
+        "dweb:/ipfs/QmR6x3ZyYKcf9ncyeEZpTXdTpXbUQw588R93fnFQ9vhsib"
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/libraries/JBBitmap.sol": {
@@ -1628,11 +1596,11 @@
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/structs/JBTiered721Flags.sol": {
-      "keccak256": "0xe81a246492912a874aa6dd53a9df34ea8eceaf9b8eb7fdb673089f9d2c9ec08d",
+      "keccak256": "0x42f9625c893559b44bbe79d7fc3f6190a0dceea673b6137ef393c44d517a9ae2",
       "license": "MIT",
       "urls": [
-        "bzz-raw://70343f0d7873171295ad1195b31233c09a2e8ec81aa53da398f2d208cabe9418",
-        "dweb:/ipfs/QmNhLf7FsLVYduT4Kgg3e9J1FYbgEqP8BuNRiRndw7vKv7"
+        "bzz-raw://b13d3d700323e73f4f2f67b3c41b20ded126009a4ac2acec0fba444d0ce6032f",
+        "dweb:/ipfs/QmWkbrzcNDtFxdApDBy8rCsBLu3ovzzZJeA9Tin9pcncSs"
       ]
     },
     "node_modules/@jbx-protocol/juice-contracts-v3/contracts/interfaces/IJBTokenUriResolver.sol": {

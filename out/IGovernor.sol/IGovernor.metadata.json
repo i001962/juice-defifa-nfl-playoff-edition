@@ -188,215 +188,6 @@
       {
         "inputs": [
           {
-            "internalType": "uint256",
-            "name": "proposalId",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint8",
-            "name": "support",
-            "type": "uint8"
-          }
-        ],
-        "name": "castVote",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "balance",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "proposalId",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint8",
-            "name": "support",
-            "type": "uint8"
-          },
-          {
-            "internalType": "uint8",
-            "name": "v",
-            "type": "uint8"
-          },
-          {
-            "internalType": "bytes32",
-            "name": "r",
-            "type": "bytes32"
-          },
-          {
-            "internalType": "bytes32",
-            "name": "s",
-            "type": "bytes32"
-          }
-        ],
-        "name": "castVoteBySig",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "balance",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "proposalId",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint8",
-            "name": "support",
-            "type": "uint8"
-          },
-          {
-            "internalType": "string",
-            "name": "reason",
-            "type": "string"
-          }
-        ],
-        "name": "castVoteWithReason",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "balance",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "proposalId",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint8",
-            "name": "support",
-            "type": "uint8"
-          },
-          {
-            "internalType": "string",
-            "name": "reason",
-            "type": "string"
-          },
-          {
-            "internalType": "bytes",
-            "name": "params",
-            "type": "bytes"
-          }
-        ],
-        "name": "castVoteWithReasonAndParams",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "balance",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "proposalId",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint8",
-            "name": "support",
-            "type": "uint8"
-          },
-          {
-            "internalType": "string",
-            "name": "reason",
-            "type": "string"
-          },
-          {
-            "internalType": "bytes",
-            "name": "params",
-            "type": "bytes"
-          },
-          {
-            "internalType": "uint8",
-            "name": "v",
-            "type": "uint8"
-          },
-          {
-            "internalType": "bytes32",
-            "name": "r",
-            "type": "bytes32"
-          },
-          {
-            "internalType": "bytes32",
-            "name": "s",
-            "type": "bytes32"
-          }
-        ],
-        "name": "castVoteWithReasonAndParamsBySig",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "balance",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "address[]",
-            "name": "targets",
-            "type": "address[]"
-          },
-          {
-            "internalType": "uint256[]",
-            "name": "values",
-            "type": "uint256[]"
-          },
-          {
-            "internalType": "bytes[]",
-            "name": "calldatas",
-            "type": "bytes[]"
-          },
-          {
-            "internalType": "bytes32",
-            "name": "descriptionHash",
-            "type": "bytes32"
-          }
-        ],
-        "name": "execute",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "proposalId",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "payable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
             "internalType": "address",
             "name": "account",
             "type": "address"
@@ -559,40 +350,6 @@
       {
         "inputs": [
           {
-            "internalType": "address[]",
-            "name": "targets",
-            "type": "address[]"
-          },
-          {
-            "internalType": "uint256[]",
-            "name": "values",
-            "type": "uint256[]"
-          },
-          {
-            "internalType": "bytes[]",
-            "name": "calldatas",
-            "type": "bytes[]"
-          },
-          {
-            "internalType": "string",
-            "name": "description",
-            "type": "string"
-          }
-        ],
-        "name": "propose",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "proposalId",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
             "internalType": "uint256",
             "name": "blockNumber",
             "type": "uint256"
@@ -711,24 +468,6 @@
         "COUNTING_MODE()": {
           "details": "A description of the possible `support` values for {castVote} and the way these votes are counted, meant to be consumed by UIs to show correct vote options and interpret the results. The string is a URL-encoded sequence of key-value pairs that each describe one aspect, for example `support=bravo&quorum=for,abstain`. There are 2 standard keys: `support` and `quorum`. - `support=bravo` refers to the vote options 0 = Against, 1 = For, 2 = Abstain, as in `GovernorBravo`. - `quorum=bravo` means that only For votes are counted towards quorum. - `quorum=for,abstain` means that both For and Abstain votes are counted towards quorum. If a counting module makes use of encoded `params`, it should  include this under a `params` key with a unique name that describes the behavior. For example: - `params=fractional` might refer to a scheme where votes are divided fractionally between for/against/abstain. - `params=erc721` might refer to a scheme where specific NFTs are delegated to vote. NOTE: The string can be decoded by the standard https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams[`URLSearchParams`] JavaScript class."
         },
-        "castVote(uint256,uint8)": {
-          "details": "Cast a vote Emits a {VoteCast} event."
-        },
-        "castVoteBySig(uint256,uint8,uint8,bytes32,bytes32)": {
-          "details": "Cast a vote using the user's cryptographic signature. Emits a {VoteCast} event."
-        },
-        "castVoteWithReason(uint256,uint8,string)": {
-          "details": "Cast a vote with a reason Emits a {VoteCast} event."
-        },
-        "castVoteWithReasonAndParams(uint256,uint8,string,bytes)": {
-          "details": "Cast a vote with a reason and additional encoded parameters Emits a {VoteCast} or {VoteCastWithParams} event depending on the length of params."
-        },
-        "castVoteWithReasonAndParamsBySig(uint256,uint8,string,bytes,uint8,bytes32,bytes32)": {
-          "details": "Cast a vote with a reason and additional encoded parameters using the user's cryptographic signature. Emits a {VoteCast} or {VoteCastWithParams} event depending on the length of params."
-        },
-        "execute(address[],uint256[],bytes[],bytes32)": {
-          "details": "Execute a successful proposal. This requires the quorum to be reached, the vote to be successful, and the deadline to be reached. Emits a {ProposalExecuted} event. Note: some module can modify the requirements for execution, for example by adding an additional timelock."
-        },
         "getVotes(address,uint256)": {
           "details": "Voting power of an `account` at a specific `blockNumber`. Note: this can be implemented in a number of ways, for example by reading the delegated balance from one (or multiple), {ERC20Votes} tokens."
         },
@@ -749,9 +488,6 @@
         },
         "proposalSnapshot(uint256)": {
           "details": "Block number used to retrieve user's votes and quorum. As per Compound's Comp and OpenZeppelin's ERC20Votes, the snapshot is performed at the end of this block. Hence, voting for this proposal starts at the beginning of the following block."
-        },
-        "propose(address[],uint256[],bytes[],string)": {
-          "details": "Create a new proposal. Vote start {IGovernor-votingDelay} blocks after the proposal is created and ends {IGovernor-votingPeriod} blocks after the voting starts. Emits a {ProposalCreated} event."
         },
         "quorum(uint256)": {
           "details": "Minimum number of cast voted required for a proposal to be successful. Note: The `blockNumber` parameter corresponds to the snapshot used for counting vote. This allows to scale the quorum depending on values such as the totalSupply of a token at this block (see {ERC20Votes})."
@@ -822,7 +558,7 @@
   },
   "settings": {
     "compilationTarget": {
-      "node_modules/@openzeppelin/contracts/governance/IGovernor.sol": "IGovernor"
+      "contracts/interfaces/IGovernor.sol": "IGovernor"
     },
     "evmVersion": "london",
     "libraries": {},
@@ -843,12 +579,12 @@
     ]
   },
   "sources": {
-    "node_modules/@openzeppelin/contracts/governance/IGovernor.sol": {
-      "keccak256": "0xe1d0cd92e6827b0ca89925a59ec0eadc2b444aa3dd430fecb752a93c36436991",
+    "contracts/interfaces/IGovernor.sol": {
+      "keccak256": "0x3ea5dfa320cf90e8e369df09b43a6b3aa1aff5516a3c03fd78ef87c80bb97be9",
       "license": "MIT",
       "urls": [
-        "bzz-raw://cf6b448bf512c72350a4aaeeb0053e7f112c278cd9bdd7eb04c2f7b40b24f4dc",
-        "dweb:/ipfs/Qmd1o6mVH7xLRg6yQ7Hza51bjARb2UA38LXsbTNRG9tvRu"
+        "bzz-raw://8cd9530bb5f1d7a3e22ff4c6f4eb6120f44347a447f1e004c1a50b207817a8d0",
+        "dweb:/ipfs/QmZ8J4pxVSpFtfqs8VPLGLEGoPRq7sMFpok6oMnmToQGfA"
       ]
     },
     "node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {

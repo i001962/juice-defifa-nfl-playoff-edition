@@ -27,7 +27,7 @@ contract DeployMainnet is Script {
   string _name = 'Defifa: American Football Playoffs 2023';
   string _symbol = 'DEFIFA 01';
   string _contractUri = '';
-  string _projectMetadataUri = 'QmXkAo9ENtwtEsYLnbwh8ncTNmcCpaBExi1ibNjYMTsDJJ';
+  string _projectMetadataUri = 'QmR52V61oynG7SqjsvVwRxRearAXhMUmyeBd8HRAx4v7nM';
   uint16 _reserved = 9; // 1 reserved NFT mintable to reserved beneficiary for every 9 NFTs minted outwardly. Inclusive, so 1 reserved can be minted as soon as the first token is minted outwardly.
 
   function run() external {
@@ -154,7 +154,7 @@ contract DeployGoerli is Script {
   string _name = 'Defifa: American Football Playoffs 2023';
   string _symbol = 'DEFIFA 01';
   string _contractUri = '';
-  string _projectMetadataUri = 'QmXkAo9ENtwtEsYLnbwh8ncTNmcCpaBExi1ibNjYMTsDJJ';
+  string _projectMetadataUri = 'QmR52V61oynG7SqjsvVwRxRearAXhMUmyeBd8HRAx4v7nM';
   uint16 _reserved = 9; // 1 reserved NFT mintable to reserved beneficiary for every 9 NFTs minted outwardly. Inclusive, so 1 reserved can be minted as soon as the first token is minted outwardly.
 
   function run() external {
