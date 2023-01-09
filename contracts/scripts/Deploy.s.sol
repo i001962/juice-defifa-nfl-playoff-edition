@@ -18,25 +18,24 @@ contract DeployMainnet is Script {
 
   address _defifaBallcats = 0x11834239698c7336EF232C00a2A9926d3375DF9D;
   // Game params.
-  uint48 _start = 1673672400; // 12am EST, Jan 14.
-  uint48 _mintDuration = 432000; // 5 days.
-  uint48 _refundPeriodDuration = 86400; // 1 day.
-  uint48 _end = 1676178000; // 12am EST, Feb 12.
-  uint80 _price = 0.1 ether;
+  uint48 _start = 1673739000; // Sat Jan 14 2023 18:30:00 GMT-0500 (Eastern Standard Time)
+  uint48 _mintDuration = 302400; // 4 days.
+  uint48 _refundPeriodDuration = 86400; // 12 hours.
+  uint48 _end = 1676278800; // Mon Feb 13 2023 04:00:00 GMT-0500 (Eastern Standard Time)
+  uint80 _price = 0.07 ether;
   // We don't have to do this effenciently since this contract never gets deployed, its just used to build the broadcast txs
-  string _name = 'Defifa: NFL Playoffs 2023';
-  string _symbol = 'DEFIFA NFL 2023';
-  string _contractUri = 'QmaK1Hib3Umokija4bRwoPdxHgGY3unRreeeLoJss3vw4Y';
-  string _projectMetadataUri = 'QmT7VFuF7cPMwMnqh3YruuYcRk2tKMb2xcXSbK2wV82Hdy';
+  string _name = 'Defifa: American Football Playoffs 2023';
+  string _symbol = 'DEFIFA 01';
+  string _contractUri = '';
+  string _projectMetadataUri = 'QmXkAo9ENtwtEsYLnbwh8ncTNmcCpaBExi1ibNjYMTsDJJ';
   uint16 _reserved = 9; // 1 reserved NFT mintable to reserved beneficiary for every 9 NFTs minted outwardly. Inclusive, so 1 reserved can be minted as soon as the first token is minted outwardly.
-
 
   function run() external {
     vm.startBroadcast();
  
-    JB721TierParams[] memory _tiers = new JB721TierParams[](32);
+    JB721TierParams[] memory _tiers = new JB721TierParams[](14);
 
-    bytes32[] memory _teamEncodedIPFSUris = new bytes32[](32);
+    bytes32[] memory _teamEncodedIPFSUris = new bytes32[](14);
     _teamEncodedIPFSUris[0] = 0xb2cf9b27f33b6b445b31fa13ad93600d35a1bafd27543b313af1e2cd727e213b;
     _teamEncodedIPFSUris[1] = 0xbfabff3f158961179837886c91f9e5847a25865b20f1a3c4f13448323284d31f;
     _teamEncodedIPFSUris[2] = 0xf526000358a2bb0227db6a0f4c28b8cfb242e0a16f568975b6f7839ef2075761;
@@ -52,7 +51,7 @@ contract DeployMainnet is Script {
     _teamEncodedIPFSUris[12] = 0x6388190babc4fd7ad390b545dc0eaf01222355583ce0a5d5496c2bb6f118039b;
     _teamEncodedIPFSUris[13] = 0x33e06853378f58d42ceb8ab266d25656eded385f82a777ca563c5e38d5241a83;
 
-    for (uint256 _i; _i < 32; ) {
+    for (uint256 _i; _i < 14; ) {
       _tiers[_i] = JB721TierParams({
         contributionFloor: _price,
         lockedUntil: 0,
@@ -146,24 +145,24 @@ contract DeployGoerli is Script {
 
   address _defifaBallcats = 0x11834239698c7336EF232C00a2A9926d3375DF9D;
   // Game params.
-  uint48 _start = 1673672400; // 12am EST, Jan 14.
-  uint48 _mintDuration = 432000; // 5 days.
-  uint48 _refundPeriodDuration = 86400; // 1 day.
-  uint48 _end = 1676178000; // 12am EST, Feb 12.
-  uint80 _price = 0.1 ether;
+  uint48 _start = 1673739000; // Sat Jan 14 2023 18:30:00 GMT-0500 (Eastern Standard Time)
+  uint48 _mintDuration = 302400; // 4 days.
+  uint48 _refundPeriodDuration = 86400; // 12 hours.
+  uint48 _end = 1676278800; // Mon Feb 13 2023 04:00:00 GMT-0500 (Eastern Standard Time)
+  uint80 _price = 0.07 ether;
   // We don't have to do this effenciently since this contract never gets deployed, its just used to build the broadcast txs
-  string _name = 'Defifa: NFL Playoffs 2023';
-  string _symbol = 'DEFIFA NFL 2023';
-  string _contractUri = 'QmaK1Hib3Umokija4bRwoPdxHgGY3unRreeeLoJss3vw4Y';
-  string _projectMetadataUri = 'QmT7VFuF7cPMwMnqh3YruuYcRk2tKMb2xcXSbK2wV82Hdy';
+  string _name = 'Defifa: American Football Playoffs 2023';
+  string _symbol = 'DEFIFA 01';
+  string _contractUri = '';
+  string _projectMetadataUri = 'QmXkAo9ENtwtEsYLnbwh8ncTNmcCpaBExi1ibNjYMTsDJJ';
   uint16 _reserved = 9; // 1 reserved NFT mintable to reserved beneficiary for every 9 NFTs minted outwardly. Inclusive, so 1 reserved can be minted as soon as the first token is minted outwardly.
 
   function run() external {
     vm.startBroadcast();
  
-    JB721TierParams[] memory _tiers = new JB721TierParams[](32);
+    JB721TierParams[] memory _tiers = new JB721TierParams[](14);
 
-    bytes32[] memory _teamEncodedIPFSUris = new bytes32[](32);
+    bytes32[] memory _teamEncodedIPFSUris = new bytes32[](14);
     _teamEncodedIPFSUris[0] = 0xb2cf9b27f33b6b445b31fa13ad93600d35a1bafd27543b313af1e2cd727e213b;
     _teamEncodedIPFSUris[1] = 0xbfabff3f158961179837886c91f9e5847a25865b20f1a3c4f13448323284d31f;
     _teamEncodedIPFSUris[2] = 0xf526000358a2bb0227db6a0f4c28b8cfb242e0a16f568975b6f7839ef2075761;
@@ -179,7 +178,7 @@ contract DeployGoerli is Script {
     _teamEncodedIPFSUris[12] = 0x6388190babc4fd7ad390b545dc0eaf01222355583ce0a5d5496c2bb6f118039b;
     _teamEncodedIPFSUris[13] = 0x33e06853378f58d42ceb8ab266d25656eded385f82a777ca563c5e38d5241a83;
 
-    for (uint256 _i; _i < 32; ) {
+    for (uint256 _i; _i < 14; ) {
       _tiers[_i] = JB721TierParams({
         contributionFloor: _price,
         lockedUntil: 0,
