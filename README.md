@@ -1,13 +1,8 @@
-# Juicebox 721 Distribution Mechanism
+# Defifa American Football Playoffs 2023
 
 ## Motivation
 
-
-## Mechanic
-
-## Architecture
-
-## Deploy
+Iterating on Defifa game.
 
 # Install
 
