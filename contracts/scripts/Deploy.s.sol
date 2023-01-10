@@ -20,13 +20,13 @@ contract DeployMainnet is Script {
   // Game params.
   uint48 _start = 1673731800; // Sat Jan 14 2023 16:30:00 GMT-0500 (Eastern Standard Time)
   uint48 _mintDuration = 345600; // 4 days.
-  uint48 _refundPeriodDuration = 43200; // 12 hours.
+  uint48 _refundPeriodDuration = 14400; // 4 hours.
   uint48 _end = 1676264400; // Mon Feb 13 2023 04:00:00 GMT-0500 (Eastern Standard Time)
   uint80 _price = 0.07 ether;
   // We don't have to do this effenciently since this contract never gets deployed, its just used to build the broadcast txs
   string _name = 'Defifa: American Football Playoffs 2023';
   string _symbol = 'DEFIFA 01';
-  string _contractUri = 'QmWr59JLBDESicC7DpWukkf6Vdr3NCYfVij4K8qoJv66mv';
+  string _contractUri = 'QmcMFvPxQ3AzvbUUPysinCiL4DbmoJejVGDMx9wMMmAd6x';
   string _projectMetadataUri = 'Qmd6KVtevLjU6o9xTiJ2XcmhENvnMmgpEZGhgJZXCLtLVx';
   uint16 _reserved = 9; // 1 reserved NFT mintable to reserved beneficiary for every 9 NFTs minted outwardly. Inclusive, so 1 reserved can be minted as soon as the first token is minted outwardly.
 
@@ -146,14 +146,14 @@ contract DeployGoerli is Script {
   address _defifaBallcats = 0x11834239698c7336EF232C00a2A9926d3375DF9D;
   // Game params.
   uint48 _start = 1673731800; // Sat Jan 14 2023 16:30:00 GMT-0500 (Eastern Standard Time)
-  uint48 _mintDuration = 376084; //345600; // 4 days.
-  uint48 _refundPeriodDuration = 43200; // 12 hours.
+  uint48 _mintDuration = 345600; // 4 days.
+  uint48 _refundPeriodDuration = 14400; // 4 hours.
   uint48 _end = 1676264400; // Mon Feb 13 2023 04:00:00 GMT-0500 (Eastern Standard Time)
   uint80 _price = 0.07 ether;
   // We don't have to do this effenciently since this contract never gets deployed, its just used to build the broadcast txs
   string _name = 'Defifa: American Football Playoffs 2023';
   string _symbol = 'DEFIFA 01';
-  string _contractUri = 'QmWr59JLBDESicC7DpWukkf6Vdr3NCYfVij4K8qoJv66mv';
+  string _contractUri = 'QmcMFvPxQ3AzvbUUPysinCiL4DbmoJejVGDMx9wMMmAd6x';
   string _projectMetadataUri = 'Qmd6KVtevLjU6o9xTiJ2XcmhENvnMmgpEZGhgJZXCLtLVx';
   uint16 _reserved = 9; // 1 reserved NFT mintable to reserved beneficiary for every 9 NFTs minted outwardly. Inclusive, so 1 reserved can be minted as soon as the first token is minted outwardly.
 
