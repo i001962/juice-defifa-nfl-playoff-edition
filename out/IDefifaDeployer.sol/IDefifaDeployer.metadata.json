@@ -249,12 +249,12 @@
               },
               {
                 "internalType": "uint48",
-                "name": "start",
+                "name": "refundPeriodDuration",
                 "type": "uint48"
               },
               {
                 "internalType": "uint48",
-                "name": "tradeDeadline",
+                "name": "start",
                 "type": "uint48"
               },
               {
@@ -414,6 +414,25 @@
             "type": "uint256"
           }
         ],
+        "name": "refundPeriodDurationOf",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "_gameId",
+            "type": "uint256"
+          }
+        ],
         "name": "startOf",
         "outputs": [
           {
@@ -463,12 +482,12 @@
               },
               {
                 "internalType": "uint48",
-                "name": "start",
+                "name": "refundPeriodDuration",
                 "type": "uint48"
               },
               {
                 "internalType": "uint48",
-                "name": "tradeDeadline",
+                "name": "start",
                 "type": "uint48"
               },
               {
@@ -493,25 +512,6 @@
             "internalType": "address",
             "name": "",
             "type": "address"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "_gameId",
-            "type": "uint256"
-          }
-        ],
-        "name": "tradeDeadlineOf",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
           }
         ],
         "stateMutability": "view",
@@ -553,11 +553,11 @@
   },
   "sources": {
     "contracts/interfaces/IDefifaDeployer.sol": {
-      "keccak256": "0x31b44677eed4404cab3ad0bf060889815de3c734fca971f1a6cff2ac1ac91d35",
+      "keccak256": "0xd5211f5c844e8f15b184d6515a3e5c5630ca5987bbe75adf2ff2df2c37e50fbe",
       "license": "MIT",
       "urls": [
-        "bzz-raw://ccc03c21b3512c74d142b279efe06ddb09d8c452bc8a3a7a33863d45515a2f7f",
-        "dweb:/ipfs/QmWBDiN868Czka1ZpMue2crihpR7MsTxTdpbquBQvHCLAH"
+        "bzz-raw://821d0df5b3176607f3bcc4bde08343015ee62817c53fcec74f1ee9aede3e03de",
+        "dweb:/ipfs/QmcNehCDW6GKSjeMUkuqgPafhBBqSnGTsPSs6ZjTYj5sqY"
       ]
     },
     "contracts/structs/DefifaDelegateData.sol": {
@@ -569,19 +569,19 @@
       ]
     },
     "contracts/structs/DefifaLaunchProjectData.sol": {
-      "keccak256": "0x66d33e14b75168c8b4cabaeb999594614f6c002a21fbedde4fe4a63dafe620c4",
+      "keccak256": "0xb724381e96c38a37279224d6c1a35424f59ac588ea6aba402202c3faf3f59119",
       "license": "MIT",
       "urls": [
-        "bzz-raw://08aa519caf41c69255445a0aa180150209f65d726eafbc26756549c5a40d9cdb",
-        "dweb:/ipfs/QmTv78DSRLJKh7pJFtRafnQN9eHPnmvZcpmMTu2YpyvPHj"
+        "bzz-raw://2f26cfa49fb8335a74e78f7596a82f792dca3663ac183c89ec792f0e8ab76efc",
+        "dweb:/ipfs/QmVcpuuJ32byuarW6B5aC38WVbWSqsLwqky6bRjkPPmjju"
       ]
     },
     "contracts/structs/DefifaTimeData.sol": {
-      "keccak256": "0xf7aef617bc8acbe16650b927e6388f674972d748798c668215dcfa163d72d215",
+      "keccak256": "0x61b54885620c76ce263b9423b5868043a49e2c1c9fe48af6c1a6511cb0c512f7",
       "license": "MIT",
       "urls": [
-        "bzz-raw://48e3541ac33c8f1591925f59bf9fce7630e77368364edc9170f4022f06f4b2f6",
-        "dweb:/ipfs/QmZLgXT1Khnffn9iiKUtprVmemnwnioiw8WxDwMqX1VtFz"
+        "bzz-raw://629c05fd1017a2cf5285231e54cae2f3b6568bb686dbbff397668eaf36acceff",
+        "dweb:/ipfs/QmPAj5GzArDoTxk9ahjSQ11EgExFojXzPDVLyMEExtTsXU"
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/enums/JB721GovernanceType.sol": {
@@ -617,11 +617,11 @@
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/interfaces/IJBTiered721DelegateStore.sol": {
-      "keccak256": "0xcf1b6e7936510e113ecfdf9ec19a53fd4bc76bbdd6fb45277b3f87dad6a80392",
+      "keccak256": "0x1f360dc9d5d181665c40063abc9f390b942f80fa8772e3d99ef9986a3cae3ebc",
       "license": "MIT",
       "urls": [
-        "bzz-raw://3837762449cbb5582dd35cf87857c71fe49d5ee723d4860fc5ff5265415ea57e",
-        "dweb:/ipfs/QmbN8ULJmgnfiD8tbKLrKE8KJDzd4xwqopSVq6DWHrMWiT"
+        "bzz-raw://266bcce6d9593f1cfcc53fe60b4752670e273a050fec0c9aae712096fe3d9b16",
+        "dweb:/ipfs/QmR6x3ZyYKcf9ncyeEZpTXdTpXbUQw588R93fnFQ9vhsib"
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/structs/JB721PricingParams.sol": {
@@ -657,11 +657,11 @@
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/structs/JBTiered721Flags.sol": {
-      "keccak256": "0xe81a246492912a874aa6dd53a9df34ea8eceaf9b8eb7fdb673089f9d2c9ec08d",
+      "keccak256": "0x42f9625c893559b44bbe79d7fc3f6190a0dceea673b6137ef393c44d517a9ae2",
       "license": "MIT",
       "urls": [
-        "bzz-raw://70343f0d7873171295ad1195b31233c09a2e8ec81aa53da398f2d208cabe9418",
-        "dweb:/ipfs/QmNhLf7FsLVYduT4Kgg3e9J1FYbgEqP8BuNRiRndw7vKv7"
+        "bzz-raw://b13d3d700323e73f4f2f67b3c41b20ded126009a4ac2acec0fba444d0ce6032f",
+        "dweb:/ipfs/QmWkbrzcNDtFxdApDBy8rCsBLu3ovzzZJeA9Tin9pcncSs"
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/structs/JBTiered721MintForTiersData.sol": {

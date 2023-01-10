@@ -216,6 +216,11 @@
                 "internalType": "bool",
                 "name": "lockManualMintingChanges",
                 "type": "bool"
+              },
+              {
+                "internalType": "bool",
+                "name": "preventOverspending",
+                "type": "bool"
               }
             ],
             "internalType": "struct JBTiered721Flags",
@@ -443,6 +448,11 @@
                 "internalType": "bool",
                 "name": "lockManualMintingChanges",
                 "type": "bool"
+              },
+              {
+                "internalType": "bool",
+                "name": "preventOverspending",
+                "type": "bool"
               }
             ],
             "internalType": "struct JBTiered721Flags",
@@ -479,35 +489,6 @@
             "internalType": "uint256[]",
             "name": "tokenIds",
             "type": "uint256[]"
-          },
-          {
-            "internalType": "uint256",
-            "name": "leftoverAmount",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "_amount",
-            "type": "uint256"
-          }
-        ],
-        "name": "recordMintBestAvailableTier",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "tokenId",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "tierId",
-            "type": "uint256"
           },
           {
             "internalType": "uint256",
@@ -1138,11 +1119,11 @@
   },
   "sources": {
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/interfaces/IJBTiered721DelegateStore.sol": {
-      "keccak256": "0xcf1b6e7936510e113ecfdf9ec19a53fd4bc76bbdd6fb45277b3f87dad6a80392",
+      "keccak256": "0x1f360dc9d5d181665c40063abc9f390b942f80fa8772e3d99ef9986a3cae3ebc",
       "license": "MIT",
       "urls": [
-        "bzz-raw://3837762449cbb5582dd35cf87857c71fe49d5ee723d4860fc5ff5265415ea57e",
-        "dweb:/ipfs/QmbN8ULJmgnfiD8tbKLrKE8KJDzd4xwqopSVq6DWHrMWiT"
+        "bzz-raw://266bcce6d9593f1cfcc53fe60b4752670e273a050fec0c9aae712096fe3d9b16",
+        "dweb:/ipfs/QmR6x3ZyYKcf9ncyeEZpTXdTpXbUQw588R93fnFQ9vhsib"
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/structs/JB721Tier.sol": {
@@ -1162,11 +1143,11 @@
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/structs/JBTiered721Flags.sol": {
-      "keccak256": "0xe81a246492912a874aa6dd53a9df34ea8eceaf9b8eb7fdb673089f9d2c9ec08d",
+      "keccak256": "0x42f9625c893559b44bbe79d7fc3f6190a0dceea673b6137ef393c44d517a9ae2",
       "license": "MIT",
       "urls": [
-        "bzz-raw://70343f0d7873171295ad1195b31233c09a2e8ec81aa53da398f2d208cabe9418",
-        "dweb:/ipfs/QmNhLf7FsLVYduT4Kgg3e9J1FYbgEqP8BuNRiRndw7vKv7"
+        "bzz-raw://b13d3d700323e73f4f2f67b3c41b20ded126009a4ac2acec0fba444d0ce6032f",
+        "dweb:/ipfs/QmWkbrzcNDtFxdApDBy8rCsBLu3ovzzZJeA9Tin9pcncSs"
       ]
     },
     "node_modules/@jbx-protocol/juice-contracts-v3/contracts/interfaces/IJBTokenUriResolver.sol": {

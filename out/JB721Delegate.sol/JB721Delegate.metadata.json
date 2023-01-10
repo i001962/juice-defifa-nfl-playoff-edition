@@ -817,6 +817,114 @@
       {
         "inputs": [
           {
+            "internalType": "uint256[]",
+            "name": "_tokenIds",
+            "type": "uint256[]"
+          },
+          {
+            "components": [
+              {
+                "internalType": "contract IJBPaymentTerminal",
+                "name": "terminal",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "holder",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "projectId",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "currentFundingCycleConfiguration",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "tokenCount",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "overflow",
+                "type": "uint256"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "currency",
+                    "type": "uint256"
+                  }
+                ],
+                "internalType": "struct JBTokenAmount",
+                "name": "reclaimAmount",
+                "type": "tuple"
+              },
+              {
+                "internalType": "bool",
+                "name": "useTotalOverflow",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "redemptionRate",
+                "type": "uint256"
+              },
+              {
+                "internalType": "string",
+                "name": "memo",
+                "type": "string"
+              },
+              {
+                "internalType": "bytes",
+                "name": "metadata",
+                "type": "bytes"
+              }
+            ],
+            "internalType": "struct JBRedeemParamsData",
+            "name": "_data",
+            "type": "tuple"
+          }
+        ],
+        "name": "redemptionWeightOf",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
             "internalType": "address",
             "name": "from",
             "type": "address"
@@ -976,6 +1084,109 @@
       {
         "inputs": [
           {
+            "components": [
+              {
+                "internalType": "contract IJBPaymentTerminal",
+                "name": "terminal",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "holder",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "projectId",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "currentFundingCycleConfiguration",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "tokenCount",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "overflow",
+                "type": "uint256"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "currency",
+                    "type": "uint256"
+                  }
+                ],
+                "internalType": "struct JBTokenAmount",
+                "name": "reclaimAmount",
+                "type": "tuple"
+              },
+              {
+                "internalType": "bool",
+                "name": "useTotalOverflow",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "redemptionRate",
+                "type": "uint256"
+              },
+              {
+                "internalType": "string",
+                "name": "memo",
+                "type": "string"
+              },
+              {
+                "internalType": "bytes",
+                "name": "metadata",
+                "type": "bytes"
+              }
+            ],
+            "internalType": "struct JBRedeemParamsData",
+            "name": "_data",
+            "type": "tuple"
+          }
+        ],
+        "name": "totalRedemptionWeight",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
             "internalType": "address",
             "name": "from",
             "type": "address"
@@ -1051,6 +1262,15 @@
             "reclaimAmount": "The amount that should be reclaimed from the treasury."
           }
         },
+        "redemptionWeightOf(uint256[],(address,address,uint256,uint256,uint256,uint256,uint256,(address,uint256,uint256,uint256),bool,uint256,string,bytes))": {
+          "params": {
+            "_data": "The Juicebox standard project redemption data.",
+            "_tokenIds": "The IDs of the tokens to get the cumulative redemption weight of."
+          },
+          "returns": {
+            "_0": "The weight."
+          }
+        },
         "safeTransferFrom(address,address,uint256)": {
           "details": "See {IERC721-safeTransferFrom}."
         },
@@ -1071,6 +1291,14 @@
         },
         "tokenURI(uint256)": {
           "details": "See {IERC721Metadata-tokenURI}."
+        },
+        "totalRedemptionWeight((address,address,uint256,uint256,uint256,uint256,uint256,(address,uint256,uint256,uint256),bool,uint256,string,bytes))": {
+          "params": {
+            "_data": "The Juicebox standard project redemption data."
+          },
+          "returns": {
+            "_0": "The total weight."
+          }
         },
         "transferFrom(address,address,uint256)": {
           "details": "See {IERC721-transferFrom}."
@@ -1107,8 +1335,14 @@
         "redeemParams((address,address,uint256,uint256,uint256,uint256,uint256,(address,uint256,uint256,uint256),bool,uint256,string,bytes))": {
           "notice": " Part of IJBFundingCycleDataSource, this function gets called when a project's token holders redeem."
         },
+        "redemptionWeightOf(uint256[],(address,address,uint256,uint256,uint256,uint256,uint256,(address,uint256,uint256,uint256),bool,uint256,string,bytes))": {
+          "notice": "The cumulative weight the given token IDs have in redemptions compared to the `totalRedemptionWeight`. "
+        },
         "supportsInterface(bytes4)": {
           "notice": "Indicates if this contract adheres to the specified interface."
+        },
+        "totalRedemptionWeight((address,address,uint256,uint256,uint256,uint256,uint256,(address,uint256,uint256,uint256),bool,uint256,string,bytes))": {
+          "notice": "The cumulative weight that all token IDs have in redemptions. "
         }
       },
       "notice": " Delegate that offers project contributors NFTs upon payment and the ability to redeem NFTs for treasury assets.",
@@ -1147,11 +1381,11 @@
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/abstract/JB721Delegate.sol": {
-      "keccak256": "0x7faae15bf7e3a1ab62b2dfce08ac612612d73c88781edb4b0b7154a742bf81d3",
+      "keccak256": "0xef3ea0cce52d3a47506d2de097ad5215ae73d8bf6213fcd38838fa7d5f0c5e31",
       "license": "MIT",
       "urls": [
-        "bzz-raw://31f5383d49c06658072d460c57b90a58df80ed91a24b0b0e64b08d15542fa876",
-        "dweb:/ipfs/QmSPyEL9aX8VrM29zFcGaNUhqVYeFR5vNgSAfnEZrrP8uR"
+        "bzz-raw://042b746fbe48ae0e6a017af3cc55067c99e04470e8a2f417f6f6cf1643f8b89d",
+        "dweb:/ipfs/QmS85ystUsceWRb7m3HaigkKqVXdt73FAjARtxvKJeyguA"
       ]
     },
     "node_modules/@jbx-protocol/juice-721-delegate/contracts/interfaces/IJB721Delegate.sol": {
