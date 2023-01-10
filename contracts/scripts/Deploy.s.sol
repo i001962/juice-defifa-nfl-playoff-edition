@@ -146,7 +146,7 @@ contract DeployGoerli is Script {
   address _defifaBallcats = 0x11834239698c7336EF232C00a2A9926d3375DF9D;
   // Game params.
   uint48 _start = 1673731800; // Sat Jan 14 2023 16:30:00 GMT-0500 (Eastern Standard Time)
-  uint48 _mintDuration = 345600; // 4 days.
+  uint48 _mintDuration = 376084; //345600; // 4 days.
   uint48 _refundPeriodDuration = 43200; // 12 hours.
   uint48 _end = 1676264400; // Mon Feb 13 2023 04:00:00 GMT-0500 (Eastern Standard Time)
   uint80 _price = 0.07 ether;
