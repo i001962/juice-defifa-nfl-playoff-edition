@@ -18,16 +18,16 @@ contract DeployMainnet is Script {
 
   address _defifaBallcats = 0x11834239698c7336EF232C00a2A9926d3375DF9D;
   // Game params.
-  uint48 _start = 1673739000; // Sat Jan 14 2023 18:30:00 GMT-0500 (Eastern Standard Time)
-  uint48 _mintDuration = 302400; // 4 days.
-  uint48 _refundPeriodDuration = 86400; // 12 hours.
-  uint48 _end = 1676278800; // Mon Feb 13 2023 04:00:00 GMT-0500 (Eastern Standard Time)
+  uint48 _start = 1673731800; // Sat Jan 14 2023 16:30:00 GMT-0500 (Eastern Standard Time)
+  uint48 _mintDuration = 345600; // 4 days.
+  uint48 _refundPeriodDuration = 43200; // 12 hours.
+  uint48 _end = 1676264400; // Mon Feb 13 2023 04:00:00 GMT-0500 (Eastern Standard Time)
   uint80 _price = 0.07 ether;
   // We don't have to do this effenciently since this contract never gets deployed, its just used to build the broadcast txs
   string _name = 'Defifa: American Football Playoffs 2023';
   string _symbol = 'DEFIFA 01';
-  string _contractUri = '';
-  string _projectMetadataUri = 'QmR52V61oynG7SqjsvVwRxRearAXhMUmyeBd8HRAx4v7nM';
+  string _contractUri = 'QmWr59JLBDESicC7DpWukkf6Vdr3NCYfVij4K8qoJv66mv';
+  string _projectMetadataUri = 'Qmd6KVtevLjU6o9xTiJ2XcmhENvnMmgpEZGhgJZXCLtLVx';
   uint16 _reserved = 9; // 1 reserved NFT mintable to reserved beneficiary for every 9 NFTs minted outwardly. Inclusive, so 1 reserved can be minted as soon as the first token is minted outwardly.
 
   function run() external {
@@ -36,20 +36,20 @@ contract DeployMainnet is Script {
     JB721TierParams[] memory _tiers = new JB721TierParams[](14);
 
     bytes32[] memory _teamEncodedIPFSUris = new bytes32[](14);
-    _teamEncodedIPFSUris[0] = 0xb2cf9b27f33b6b445b31fa13ad93600d35a1bafd27543b313af1e2cd727e213b;
-    _teamEncodedIPFSUris[1] = 0xbfabff3f158961179837886c91f9e5847a25865b20f1a3c4f13448323284d31f;
-    _teamEncodedIPFSUris[2] = 0xf526000358a2bb0227db6a0f4c28b8cfb242e0a16f568975b6f7839ef2075761;
-    _teamEncodedIPFSUris[3] = 0xb514ff48aef786b83f456773af2b432365707b84ca9ec02c0639732279c57f35;
-    _teamEncodedIPFSUris[4] = 0x816bff580d5d900165c09b953c11cd4a9fe15b41ded825edfc82680eb7cdeaa9;
-    _teamEncodedIPFSUris[5] = 0x2850e2b55a3fb53a17173d0e91938e2da2d520c3092858ce68a460dad35bbc91;
-    _teamEncodedIPFSUris[6] = 0x98fa3187e98ad21fcdf43a1e1601e8f8619ceeaf9f3fb0039f2f61f31e35a145;
-    _teamEncodedIPFSUris[7] = 0xda36dfe50c30ae4e83b4e8ef4cd4ce9e580298a55d31b8d7276e644380ce9ff6;
-    _teamEncodedIPFSUris[8] = 0x8b3b961de3bacb600488d91dbe9277c50f16311b92455e82ce6c26d078d9503f;
-    _teamEncodedIPFSUris[9] = 0x0977f77350659d1f8284f1b0a4f0ee447cf32c6ef8c06b7ec5f9295822818111;
-    _teamEncodedIPFSUris[10] = 0x6198d84d8904f2c89fa6ff3de01ccce8b928cfb6182da65723b70aa1e63a94c8;
-    _teamEncodedIPFSUris[11] = 0x895646f615fc45358d894014f3d8c15ad020323cf57c6624464bd11a2815a480;
-    _teamEncodedIPFSUris[12] = 0x6388190babc4fd7ad390b545dc0eaf01222355583ce0a5d5496c2bb6f118039b;
-    _teamEncodedIPFSUris[13] = 0x33e06853378f58d42ceb8ab266d25656eded385f82a777ca563c5e38d5241a83;
+    _teamEncodedIPFSUris[0] = 0x8cfc0a1fea9a77c9e9480fcb01e13a13119061b56a9dd5fc04ad4d445d4535ad;
+    _teamEncodedIPFSUris[1] = 0x4d809cfda23217090e10da217a2345fce13aefdd3a2af339ae135616bef00c24;
+    _teamEncodedIPFSUris[2] = 0x30c64aad813af1756c99076e65c594714d75cc2a57208ff5e86e411ecc9c125c;
+    _teamEncodedIPFSUris[3] = 0x168a6513fd85ce9c612e7b78591a2ba9569dea73b11cb63730107d1f2b6db615;
+    _teamEncodedIPFSUris[4] = 0x18aa6d766db05b96a448cb58cff79bb7c634ac251e650128cfebb6495af2ce19;
+    _teamEncodedIPFSUris[5] = 0xfafbfc3691f45a4e69b6bca740ff1984785657b7beb352415211b23bdd19486a;
+    _teamEncodedIPFSUris[6] = 0x482f3c33e6585f91b8d04ec052c6d514688d0f9ccd11595cdaf5eb820ff8432a;
+    _teamEncodedIPFSUris[7] = 0x64e73a62f5fef69c41cc60b1330f9c81b8d98ac2e964e7898a815d88c7e93e3c;
+    _teamEncodedIPFSUris[8] = 0x60327d1125fdffa5ef25559f57d0dca9612b22fcadb5a780817cd87e22579181;
+    _teamEncodedIPFSUris[9] = 0x98120e87584bcfbf0c6f82e09be8e1ac9b4e7256d4417889637e80d7f388105b;
+    _teamEncodedIPFSUris[10] = 0x1f4c5d73015856a4695e3d0075e8decb13c0bc167f3d2d5f2158aded119b438e;
+    _teamEncodedIPFSUris[11] = 0x8b6b21d5ddfbe2e959970c4ffb383ffd056d2977d6e6c051b07f39c6c28aeec5;
+    _teamEncodedIPFSUris[12] = 0xe0913f3ba3713184ae2796bfd0162b8970a3d3fb6952ca9c45da4f24ec4e36d0;
+    _teamEncodedIPFSUris[13] = 0xa89a7cbf0049d1d342d9bc9d40f02064397c29fea78165cf07fcf340b36a84df;
 
     for (uint256 _i; _i < 14; ) {
       _tiers[_i] = JB721TierParams({
@@ -145,16 +145,16 @@ contract DeployGoerli is Script {
 
   address _defifaBallcats = 0x11834239698c7336EF232C00a2A9926d3375DF9D;
   // Game params.
-  uint48 _start = 1673739000; // Sat Jan 14 2023 18:30:00 GMT-0500 (Eastern Standard Time)
-  uint48 _mintDuration = 302400; // 4 days.
-  uint48 _refundPeriodDuration = 86400; // 12 hours.
-  uint48 _end = 1676278800; // Mon Feb 13 2023 04:00:00 GMT-0500 (Eastern Standard Time)
+  uint48 _start = 1673731800; // Sat Jan 14 2023 16:30:00 GMT-0500 (Eastern Standard Time)
+  uint48 _mintDuration = 345600; // 4 days.
+  uint48 _refundPeriodDuration = 43200; // 12 hours.
+  uint48 _end = 1676264400; // Mon Feb 13 2023 04:00:00 GMT-0500 (Eastern Standard Time)
   uint80 _price = 0.07 ether;
   // We don't have to do this effenciently since this contract never gets deployed, its just used to build the broadcast txs
   string _name = 'Defifa: American Football Playoffs 2023';
   string _symbol = 'DEFIFA 01';
-  string _contractUri = '';
-  string _projectMetadataUri = 'QmR52V61oynG7SqjsvVwRxRearAXhMUmyeBd8HRAx4v7nM';
+  string _contractUri = 'QmWr59JLBDESicC7DpWukkf6Vdr3NCYfVij4K8qoJv66mv';
+  string _projectMetadataUri = 'Qmd6KVtevLjU6o9xTiJ2XcmhENvnMmgpEZGhgJZXCLtLVx';
   uint16 _reserved = 9; // 1 reserved NFT mintable to reserved beneficiary for every 9 NFTs minted outwardly. Inclusive, so 1 reserved can be minted as soon as the first token is minted outwardly.
 
   function run() external {
@@ -163,20 +163,20 @@ contract DeployGoerli is Script {
     JB721TierParams[] memory _tiers = new JB721TierParams[](14);
 
     bytes32[] memory _teamEncodedIPFSUris = new bytes32[](14);
-    _teamEncodedIPFSUris[0] = 0xb2cf9b27f33b6b445b31fa13ad93600d35a1bafd27543b313af1e2cd727e213b;
-    _teamEncodedIPFSUris[1] = 0xbfabff3f158961179837886c91f9e5847a25865b20f1a3c4f13448323284d31f;
-    _teamEncodedIPFSUris[2] = 0xf526000358a2bb0227db6a0f4c28b8cfb242e0a16f568975b6f7839ef2075761;
-    _teamEncodedIPFSUris[3] = 0xb514ff48aef786b83f456773af2b432365707b84ca9ec02c0639732279c57f35;
-    _teamEncodedIPFSUris[4] = 0x816bff580d5d900165c09b953c11cd4a9fe15b41ded825edfc82680eb7cdeaa9;
-    _teamEncodedIPFSUris[5] = 0x2850e2b55a3fb53a17173d0e91938e2da2d520c3092858ce68a460dad35bbc91;
-    _teamEncodedIPFSUris[6] = 0x98fa3187e98ad21fcdf43a1e1601e8f8619ceeaf9f3fb0039f2f61f31e35a145;
-    _teamEncodedIPFSUris[7] = 0xda36dfe50c30ae4e83b4e8ef4cd4ce9e580298a55d31b8d7276e644380ce9ff6;
-    _teamEncodedIPFSUris[8] = 0x8b3b961de3bacb600488d91dbe9277c50f16311b92455e82ce6c26d078d9503f;
-    _teamEncodedIPFSUris[9] = 0x0977f77350659d1f8284f1b0a4f0ee447cf32c6ef8c06b7ec5f9295822818111;
-    _teamEncodedIPFSUris[10] = 0x6198d84d8904f2c89fa6ff3de01ccce8b928cfb6182da65723b70aa1e63a94c8;
-    _teamEncodedIPFSUris[11] = 0x895646f615fc45358d894014f3d8c15ad020323cf57c6624464bd11a2815a480;
-    _teamEncodedIPFSUris[12] = 0x6388190babc4fd7ad390b545dc0eaf01222355583ce0a5d5496c2bb6f118039b;
-    _teamEncodedIPFSUris[13] = 0x33e06853378f58d42ceb8ab266d25656eded385f82a777ca563c5e38d5241a83;
+    _teamEncodedIPFSUris[0] = 0x8cfc0a1fea9a77c9e9480fcb01e13a13119061b56a9dd5fc04ad4d445d4535ad;
+    _teamEncodedIPFSUris[1] = 0x4d809cfda23217090e10da217a2345fce13aefdd3a2af339ae135616bef00c24;
+    _teamEncodedIPFSUris[2] = 0x30c64aad813af1756c99076e65c594714d75cc2a57208ff5e86e411ecc9c125c;
+    _teamEncodedIPFSUris[3] = 0x168a6513fd85ce9c612e7b78591a2ba9569dea73b11cb63730107d1f2b6db615;
+    _teamEncodedIPFSUris[4] = 0x18aa6d766db05b96a448cb58cff79bb7c634ac251e650128cfebb6495af2ce19;
+    _teamEncodedIPFSUris[5] = 0xfafbfc3691f45a4e69b6bca740ff1984785657b7beb352415211b23bdd19486a;
+    _teamEncodedIPFSUris[6] = 0x482f3c33e6585f91b8d04ec052c6d514688d0f9ccd11595cdaf5eb820ff8432a;
+    _teamEncodedIPFSUris[7] = 0x64e73a62f5fef69c41cc60b1330f9c81b8d98ac2e964e7898a815d88c7e93e3c;
+    _teamEncodedIPFSUris[8] = 0x60327d1125fdffa5ef25559f57d0dca9612b22fcadb5a780817cd87e22579181;
+    _teamEncodedIPFSUris[9] = 0x98120e87584bcfbf0c6f82e09be8e1ac9b4e7256d4417889637e80d7f388105b;
+    _teamEncodedIPFSUris[10] = 0x1f4c5d73015856a4695e3d0075e8decb13c0bc167f3d2d5f2158aded119b438e;
+    _teamEncodedIPFSUris[11] = 0x8b6b21d5ddfbe2e959970c4ffb383ffd056d2977d6e6c051b07f39c6c28aeec5;
+    _teamEncodedIPFSUris[12] = 0xe0913f3ba3713184ae2796bfd0162b8970a3d3fb6952ca9c45da4f24ec4e36d0;
+    _teamEncodedIPFSUris[13] = 0xa89a7cbf0049d1d342d9bc9d40f02064397c29fea78165cf07fcf340b36a84df;
 
     for (uint256 _i; _i < 14; ) {
       _tiers[_i] = JB721TierParams({
