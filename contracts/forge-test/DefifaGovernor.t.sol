@@ -1444,6 +1444,7 @@ contract DefifaGovernorTest is TestBaseWorkflow {
     JB721Tier memory _tier = _delegate.store().tier(address(_delegate), _tierId);
     uint256 _cost = _tier.contributionFloor;
     address _refundUser = address(bytes20(keccak256('refund_user')));
+    uint256 _initialActiveTiers = _delegate.activeTiers();
 
     // The user should have no balance
     assertEq(_delegate.balanceOf(_refundUser), 0);
@@ -1479,6 +1480,13 @@ contract DefifaGovernorTest is TestBaseWorkflow {
     // The user should have have a token
     assertEq(_delegate.balanceOf(_refundUser), 1);
 
+    // If this was the first mint in this tier then activeTier should increase
+    if(_tier.initialQuantity - _tier.remainingQuantity == 0)
+      assertEq(
+        _initialActiveTiers + 1,
+        _delegate.activeTiers()
+      );
+
     uint256 _numberBurned = _delegate.store().numberOfBurnedFor(address(_delegate), _tierId);
 
     // Craft the metadata: redeem the tokenId
@@ -1508,6 +1516,12 @@ contract DefifaGovernorTest is TestBaseWorkflow {
     assertEq(_refundUser.balance, _cost);
     // User should no longer have the NFT
     assertEq(_delegate.balanceOf(_refundUser), 0);
+    // If this was the only mint in this tier then activeTier should decrease to its original state
+    if(_tier.initialQuantity - _tier.remainingQuantity == 0)
+      assertEq(
+        _initialActiveTiers,
+        _delegate.activeTiers()
+      );
   }
 
   function testMintAndRedeem_activeTiersIsCorrect(
@@ -1534,24 +1548,26 @@ contract DefifaGovernorTest is TestBaseWorkflow {
 
     // Phase 1: minting
     vm.warp(defifaData.start - defifaData.mintDuration - defifaData.refundPeriodDuration);
-    // deployer.queueNextPhaseOf(_projectId);
+    deployer.queueNextPhaseOf(_projectId);
 
-    // for (uint256 i = 0; i < nTiers; i++) {
-    //   // Nothing has been minted, nothing should be active
-    //   assertEq(
-    //     _nft.activeTiers(),
-    //     0
-    //   );
+    for (uint256 i = 0; i < nTiers; i++) {
+      // Nothing has been minted, nothing should be active
+      assertEq(
+        _nft.activeTiers(),
+        0
+      );
 
-    //   // Have a user mint and refund the tier
-    //   mintAndRefund(_nft, _projectId, i + 1);
+      // Have a user mint and refund the tier
+      mintAndRefund(_nft, _projectId, i + 1);
+      mintAndRefund(_nft, _projectId, i + 1);
+      mintAndRefund(_nft, _projectId, i + 1);
 
-    //   // If all tokens of a tier got burned then it should no longer be active
-    //   assertEq(
-    //     _nft.activeTiers(),
-    //     0
-    //   );
-    // }
+      // If all tokens of a tier got burned then it should no longer be active
+      assertEq(
+        _nft.activeTiers(),
+        0
+      );
+    }
 
     for (uint256 i = 0; i < nTiers; i++) {
        // all tiers up until this one should be considered active
@@ -1564,11 +1580,12 @@ contract DefifaGovernorTest is TestBaseWorkflow {
       _users[i] = address(bytes20(keccak256(abi.encode('user', Strings.toString(i)))));
 
       // fund user
-      vm.deal(_users[i], 1 ether);
+      vm.deal(_users[i], 2 ether);
 
       // Build metadata to buy specific NFT
-      uint16[] memory rawMetadata = new uint16[](1);
+      uint16[] memory rawMetadata = new uint16[](2);
       rawMetadata[0] = uint16(i + 1); // reward tier, 1 indexed
+      rawMetadata[1] = uint16(i + 1); // reward tier, 1 indexed
       bytes memory metadata = abi.encode(
         bytes32(0),
         bytes32(0),
@@ -1579,7 +1596,7 @@ contract DefifaGovernorTest is TestBaseWorkflow {
 
       // Pay to the project and mint an NFT
       vm.prank(_users[i]);
-      _terminals[0].pay{value: 1 ether}(
+      _terminals[0].pay{value: 2 ether}(
         _projectId,
         1 ether,
         address(0),
@@ -1596,8 +1613,8 @@ contract DefifaGovernorTest is TestBaseWorkflow {
 
        // all tiers up until and including this one should be considered active
       assertEq(
-        _nft.activeTiers(),
-        i + 1
+        i + 1,
+        _nft.activeTiers()
       );
     }
   }
