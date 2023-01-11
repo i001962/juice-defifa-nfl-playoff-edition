@@ -1510,6 +1510,98 @@ contract DefifaGovernorTest is TestBaseWorkflow {
     assertEq(_delegate.balanceOf(_refundUser), 0);
   }
 
+  function testMintAndRedeem_activeTiersIsCorrect(
+    uint8 nTiers,
+    uint8[] calldata distribution
+  ) public {
+    vm.assume(nTiers > 10 && nTiers < 100);
+    vm.assume(distribution.length < nTiers);
+
+    uint256 _sumDistribution;
+    for (uint256 i = 0; i < distribution.length; i++) {
+      _sumDistribution += distribution[i];
+    }
+
+    vm.assume(_sumDistribution > 0);
+
+    address[] memory _users = new address[](nTiers);
+
+    DefifaLaunchProjectData memory defifaData = getBasicDefifaLaunchData();
+    (uint256 _projectId, DefifaDelegate _nft, DefifaGovernor _governor) = createDefifaProject(
+      uint256(nTiers),
+      defifaData
+    );
+
+    // Phase 1: minting
+    vm.warp(defifaData.start - defifaData.mintDuration - defifaData.refundPeriodDuration);
+    // deployer.queueNextPhaseOf(_projectId);
+
+    // for (uint256 i = 0; i < nTiers; i++) {
+    //   // Nothing has been minted, nothing should be active
+    //   assertEq(
+    //     _nft.activeTiers(),
+    //     0
+    //   );
+
+    //   // Have a user mint and refund the tier
+    //   mintAndRefund(_nft, _projectId, i + 1);
+
+    //   // If all tokens of a tier got burned then it should no longer be active
+    //   assertEq(
+    //     _nft.activeTiers(),
+    //     0
+    //   );
+    // }
+
+    for (uint256 i = 0; i < nTiers; i++) {
+       // all tiers up until this one should be considered active
+      assertEq(
+        _nft.activeTiers(),
+        i
+      );
+
+      // Generate a new address for each tier
+      _users[i] = address(bytes20(keccak256(abi.encode('user', Strings.toString(i)))));
+
+      // fund user
+      vm.deal(_users[i], 1 ether);
+
+      // Build metadata to buy specific NFT
+      uint16[] memory rawMetadata = new uint16[](1);
+      rawMetadata[0] = uint16(i + 1); // reward tier, 1 indexed
+      bytes memory metadata = abi.encode(
+        bytes32(0),
+        bytes32(0),
+        type(IJB721Delegate).interfaceId,
+        false,
+        rawMetadata
+      );
+
+      // Pay to the project and mint an NFT
+      vm.prank(_users[i]);
+      _terminals[0].pay{value: 1 ether}(
+        _projectId,
+        1 ether,
+        address(0),
+        _users[i],
+        0,
+        true,
+        '',
+        metadata
+      );
+
+      // Forward 1 block, user should receive all the voting power of the tier, as its the only NFT
+      vm.roll(block.number + 1);
+      assertEq(_governor.MAX_VOTING_POWER_TIER(), _governor.getVotes(_users[i], block.number - 1));
+
+       // all tiers up until and including this one should be considered active
+      assertEq(
+        _nft.activeTiers(),
+        i + 1
+      );
+    }
+  }
+
   // Create launchProjectFor(..) payload
   string name = 'NAME';
   string symbol = 'SYM';

@@ -314,8 +314,7 @@ contract DefifaGovernor is Governor, GovernorCountingSimple, IDefifaGovernor {
     The number of voting units that must have participated in a vote for it to be ratified. 
   */
   function quorum(uint256) public view override(IGovernor) returns (uint256) {
-    return
-      (defifaDelegate.store().maxTierIdOf(address(defifaDelegate)) / 2) * MAX_VOTING_POWER_TIER;
+    return defifaDelegate.activeTiers() / 2 * MAX_VOTING_POWER_TIER;
   }
 
   // Required override.
