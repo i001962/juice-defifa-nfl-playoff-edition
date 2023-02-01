@@ -18,15 +18,14 @@ contract DeployMainnet is Script {
 
   address _defifaBallcats = 0x11834239698c7336EF232C00a2A9926d3375DF9D;
   // Game params.
-  uint48 _start = 1673731800; // Sat Jan 14 2023 16:30:00 GMT-0500 (Eastern Standard Time)
+  uint48 _start = 1683731800; // Sat Jan 14 2023 16:30:00 GMT-0500 (Eastern Standard Time)
   uint48 _mintDuration = 345600; // 4 days.
   uint48 _refundPeriodDuration = 14400; // 4 hours.
-  uint48 _end = 1676264400; // Mon Feb 13 2023 04:00:00 GMT-0500 (Eastern Standard Time)
+  uint48 _end = 1686264400; // Mon Feb 13 2023 04:00:00 GMT-0500 (Eastern Standard Time)
   uint80 _price = 0.07 ether;
   // We don't have to do this effenciently since this contract never gets deployed, its just used to build the broadcast txs
-  string _name = 'Defifa: American Football Playoffs 2023';
-  string _symbol = 'DEFIFA 01';
-  string _contractUri = 'QmcMFvPxQ3AzvbUUPysinCiL4DbmoJejVGDMx9wMMmAd6x';
+  string _name = 'Testing 910902';
+  string _symbol = 'TEST';
   string _projectMetadataUri = 'Qmd6KVtevLjU6o9xTiJ2XcmhENvnMmgpEZGhgJZXCLtLVx';
   uint16 _reserved = 9; // 1 reserved NFT mintable to reserved beneficiary for every 9 NFTs minted outwardly. Inclusive, so 1 reserved can be minted as soon as the first token is minted outwardly.
 
@@ -34,22 +33,6 @@ contract DeployMainnet is Script {
     vm.startBroadcast();
  
     JB721TierParams[] memory _tiers = new JB721TierParams[](14);
-
-    bytes32[] memory _teamEncodedIPFSUris = new bytes32[](14);
-    _teamEncodedIPFSUris[0] = 0x8cfc0a1fea9a77c9e9480fcb01e13a13119061b56a9dd5fc04ad4d445d4535ad;
-    _teamEncodedIPFSUris[1] = 0x4d809cfda23217090e10da217a2345fce13aefdd3a2af339ae135616bef00c24;
-    _teamEncodedIPFSUris[2] = 0x30c64aad813af1756c99076e65c594714d75cc2a57208ff5e86e411ecc9c125c;
-    _teamEncodedIPFSUris[3] = 0x168a6513fd85ce9c612e7b78591a2ba9569dea73b11cb63730107d1f2b6db615;
-    _teamEncodedIPFSUris[4] = 0x18aa6d766db05b96a448cb58cff79bb7c634ac251e650128cfebb6495af2ce19;
-    _teamEncodedIPFSUris[5] = 0xfafbfc3691f45a4e69b6bca740ff1984785657b7beb352415211b23bdd19486a;
-    _teamEncodedIPFSUris[6] = 0x482f3c33e6585f91b8d04ec052c6d514688d0f9ccd11595cdaf5eb820ff8432a;
-    _teamEncodedIPFSUris[7] = 0x64e73a62f5fef69c41cc60b1330f9c81b8d98ac2e964e7898a815d88c7e93e3c;
-    _teamEncodedIPFSUris[8] = 0x60327d1125fdffa5ef25559f57d0dca9612b22fcadb5a780817cd87e22579181;
-    _teamEncodedIPFSUris[9] = 0x98120e87584bcfbf0c6f82e09be8e1ac9b4e7256d4417889637e80d7f388105b;
-    _teamEncodedIPFSUris[10] = 0x1f4c5d73015856a4695e3d0075e8decb13c0bc167f3d2d5f2158aded119b438e;
-    _teamEncodedIPFSUris[11] = 0x8b6b21d5ddfbe2e959970c4ffb383ffd056d2977d6e6c051b07f39c6c28aeec5;
-    _teamEncodedIPFSUris[12] = 0xe0913f3ba3713184ae2796bfd0162b8970a3d3fb6952ca9c45da4f24ec4e36d0;
-    _teamEncodedIPFSUris[13] = 0xa89a7cbf0049d1d342d9bc9d40f02064397c29fea78165cf07fcf340b36a84df;
 
     for (uint256 _i; _i < 14; ) {
       _tiers[_i] = JB721TierParams({
@@ -59,10 +42,14 @@ contract DeployMainnet is Script {
         votingUnits: 1,
         reservedRate: _reserved,
         reservedTokenBeneficiary: _defifaBallcats,
-        encodedIPFSUri: _teamEncodedIPFSUris[_i],
+        royaltyRate: 0,
+        royaltyBeneficiary: address(0),
+        encodedIPFSUri: '',
         allowManualMint: false,
-        shouldUseBeneficiaryAsDefault: true,
-        transfersPausable: true
+        category: 1,
+        shouldUseReservedTokenBeneficiaryAsDefault: true,
+        shouldUseRoyaltyBeneficiaryAsDefault: false,
+        transfersPausable: false
       });
 
       unchecked {
@@ -73,8 +60,8 @@ contract DeployMainnet is Script {
     DefifaDelegateData memory _delegateData = DefifaDelegateData({
       name: _name,
       symbol: _symbol,
-      baseUri: 'ipfs://',
-      contractUri: _contractUri,
+      baseUri: '',
+      contractUri: '',
       tiers: _tiers,
       store: store,
       // Set owner will be set to the Governor later on in this script.
@@ -145,38 +132,21 @@ contract DeployGoerli is Script {
 
   address _defifaBallcats = 0x11834239698c7336EF232C00a2A9926d3375DF9D;
   // Game params.
-  uint48 _start = 1673731800; // Sat Jan 14 2023 16:30:00 GMT-0500 (Eastern Standard Time)
+  uint48 _start = 1683731800; // Sat Jan 14 2023 16:30:00 GMT-0500 (Eastern Standard Time)
   uint48 _mintDuration = 345600; // 4 days.
   uint48 _refundPeriodDuration = 14400; // 4 hours.
-  uint48 _end = 1676264400; // Mon Feb 13 2023 04:00:00 GMT-0500 (Eastern Standard Time)
+  uint48 _end = 1686264400; // Mon Feb 13 2023 04:00:00 GMT-0500 (Eastern Standard Time)
   uint80 _price = 0.07 ether;
   // We don't have to do this effenciently since this contract never gets deployed, its just used to build the broadcast txs
-  string _name = 'Defifa: American Football Playoffs 2023';
-  string _symbol = 'DEFIFA 01';
-  string _contractUri = 'QmcMFvPxQ3AzvbUUPysinCiL4DbmoJejVGDMx9wMMmAd6x';
-  string _projectMetadataUri = 'Qmd6KVtevLjU6o9xTiJ2XcmhENvnMmgpEZGhgJZXCLtLVx';
+  string _name = 'Testing 910902';
+  string _symbol = 'TEST';
+  string _projectMetadataUri = 'i';
   uint16 _reserved = 9; // 1 reserved NFT mintable to reserved beneficiary for every 9 NFTs minted outwardly. Inclusive, so 1 reserved can be minted as soon as the first token is minted outwardly.
 
   function run() external {
     vm.startBroadcast();
  
     JB721TierParams[] memory _tiers = new JB721TierParams[](14);
-
-    bytes32[] memory _teamEncodedIPFSUris = new bytes32[](14);
-    _teamEncodedIPFSUris[0] = 0x8cfc0a1fea9a77c9e9480fcb01e13a13119061b56a9dd5fc04ad4d445d4535ad;
-    _teamEncodedIPFSUris[1] = 0x4d809cfda23217090e10da217a2345fce13aefdd3a2af339ae135616bef00c24;
-    _teamEncodedIPFSUris[2] = 0x30c64aad813af1756c99076e65c594714d75cc2a57208ff5e86e411ecc9c125c;
-    _teamEncodedIPFSUris[3] = 0x168a6513fd85ce9c612e7b78591a2ba9569dea73b11cb63730107d1f2b6db615;
-    _teamEncodedIPFSUris[4] = 0x18aa6d766db05b96a448cb58cff79bb7c634ac251e650128cfebb6495af2ce19;
-    _teamEncodedIPFSUris[5] = 0xfafbfc3691f45a4e69b6bca740ff1984785657b7beb352415211b23bdd19486a;
-    _teamEncodedIPFSUris[6] = 0x482f3c33e6585f91b8d04ec052c6d514688d0f9ccd11595cdaf5eb820ff8432a;
-    _teamEncodedIPFSUris[7] = 0x64e73a62f5fef69c41cc60b1330f9c81b8d98ac2e964e7898a815d88c7e93e3c;
-    _teamEncodedIPFSUris[8] = 0x60327d1125fdffa5ef25559f57d0dca9612b22fcadb5a780817cd87e22579181;
-    _teamEncodedIPFSUris[9] = 0x98120e87584bcfbf0c6f82e09be8e1ac9b4e7256d4417889637e80d7f388105b;
-    _teamEncodedIPFSUris[10] = 0x1f4c5d73015856a4695e3d0075e8decb13c0bc167f3d2d5f2158aded119b438e;
-    _teamEncodedIPFSUris[11] = 0x8b6b21d5ddfbe2e959970c4ffb383ffd056d2977d6e6c051b07f39c6c28aeec5;
-    _teamEncodedIPFSUris[12] = 0xe0913f3ba3713184ae2796bfd0162b8970a3d3fb6952ca9c45da4f24ec4e36d0;
-    _teamEncodedIPFSUris[13] = 0xa89a7cbf0049d1d342d9bc9d40f02064397c29fea78165cf07fcf340b36a84df;
 
     for (uint256 _i; _i < 14; ) {
       _tiers[_i] = JB721TierParams({
@@ -186,10 +156,14 @@ contract DeployGoerli is Script {
         votingUnits: 1,
         reservedRate: _reserved,
         reservedTokenBeneficiary: _defifaBallcats,
-        encodedIPFSUri: _teamEncodedIPFSUris[_i],
+        royaltyRate: 0,
+        royaltyBeneficiary: address(0),
+        encodedIPFSUri: '',
         allowManualMint: false,
-        shouldUseBeneficiaryAsDefault: true,
-        transfersPausable: true
+        category: 1,
+        shouldUseReservedTokenBeneficiaryAsDefault: true,
+        shouldUseRoyaltyBeneficiaryAsDefault: false,
+        transfersPausable: false
       });
 
       unchecked {
@@ -200,8 +174,8 @@ contract DeployGoerli is Script {
     DefifaDelegateData memory _delegateData = DefifaDelegateData({
       name: _name,
       symbol: _symbol,
-      baseUri: 'ipfs://',
-      contractUri: _contractUri,
+      baseUri: '',
+      contractUri: '',
       tiers: _tiers,
       store: store,
       // Set owner will be set to the Governor later on in this script.

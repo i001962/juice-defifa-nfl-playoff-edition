@@ -226,6 +226,9 @@ contract DefifaDeployer is IDefifaDeployer, IERC721Receiver {
     DefifaDelegateData memory _delegateData,
     DefifaLaunchProjectData memory _launchProjectData
   ) external override returns (uint256 gameId) {
+    // Start minting right away if a start time isn't provided.
+    if (_launchProjectData.start == 0) _launchProjectData.start = uint48(block.timestamp);
+
     // Make sure the provided gameplay timestamps are sequential.
     if (
       _launchProjectData.start - _launchProjectData.refundPeriodDuration - _launchProjectData.mintDuration < block.timestamp ||
@@ -605,6 +608,8 @@ contract DefifaDeployer is IDefifaDeployer, IERC721Receiver {
     @return configuration The configuration of the funding cycle that was successfully reconfigured.
   */
   function _queuePhase4(uint256 _gameId, address _dataSource) internal returns (uint256 configuration) {
+    // TODO: Save total project token supply.
+    // TODO: Save block number .
     return
       controller.reconfigureFundingCyclesOf(
         _gameId,

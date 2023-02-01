@@ -1547,8 +1547,12 @@ contract DefifaGovernorTest is TestBaseWorkflow {
         votingUnits: 100,
         reservedRate: 1001,
         reservedTokenBeneficiary: address(0),
+        royaltyRate: 0,
+        royaltyBeneficiary: address(0),
         encodedIPFSUri: tokenUris[i % tokenUris.length], // this way we dont need more tokenUris
-        shouldUseBeneficiaryAsDefault: false,
+        category: 1,
+        shouldUseReservedTokenBeneficiaryAsDefault: false,
+        shouldUseRoyaltyBeneficiaryAsDefault: false,
         allowManualMint: false,
         transfersPausable: true
       });

@@ -3,10 +3,9 @@ pragma solidity ^0.8.16;
 
 import '@jbx-protocol/juice-721-delegate/contracts/JB721TieredGovernance.sol';
 import '@jbx-protocol/juice-contracts-v3/contracts/interfaces/IJBSingleTokenPaymentTerminal.sol';
-import 'base64/base64.sol';
+import 'lib/base64/base64.sol';
 
 import './interfaces/IDefifaDelegate.sol';
-import './interfaces/ITypeface.sol';
 
 /** 
   @title
@@ -83,6 +82,16 @@ contract DefifaDelegate is IDefifaDelegate, JB721TieredGovernance {
     The amount of tokens that have been redeemed from a tier, refunds are not counted
   */
   mapping(uint256 => uint256) private _redeemedFromTier;
+
+  //*********************************************************************//
+  // --------------------- public stored properties ------------------- //
+  //*********************************************************************//
+
+  /**
+    @notice
+    The typeface NFTs are written in.
+  */
+  ITypeface public override typeface;
 
   //*********************************************************************//
   // ------------------------- external views -------------------------- //
@@ -250,13 +259,11 @@ contract DefifaDelegate is IDefifaDelegate, JB721TieredGovernance {
       )
     );
 
-    bytes memory fontSource = ITypeface(capsulesTypeface).sourceOf(
-      Font({weight: 500, style: 'normal'})
-    );
+    bytes memory fontSource = ITypeface(typeface).sourceOf(Font({weight: 500, style: 'normal'}));
     parts[2] = Base64.encode(
       abi.encodePacked(
         '<svg width="289" height="403" viewBox="0 0 289 403" xmlns="http://www.w3.org/2000/svg"><style>@font-face{font-family:"Capsules-500";src:url(data:font/truetype;charset=utf-8;base64,',
-        getFontSource(), // import Capsules typeface
+        fontSource, // import Capsules typeface
         ');format("opentype");}a,a:visited,a:hover{fill:inherit;text-decoration:none;}text{font-size:16px;fill:',
         '#777'
         ';font-family:"Capsules-500",monospace;font-weight:500;white-space:pre-wrap;}#header text{fill:',
@@ -295,16 +302,56 @@ contract DefifaDelegate is IDefifaDelegate, JB721TieredGovernance {
       )
     );
     parts[3] = string('"}');
-    string memory uri = string.concat(
-      parts[0],
-      Base64.encode(abi.encodePacked(parts[1], parts[2], parts[3]))
-    );
-    return uri;
+    return string.concat(parts[0], Base64.encode(abi.encodePacked(parts[1], parts[2], parts[3])));
   }
 
   //*********************************************************************//
   // ---------------------- external transactions ---------------------- //
   //*********************************************************************//
+
+  /**
+    @param _projectId The ID of the project this contract's functionality applies to.
+    @param _directory The directory of terminals and controllers for projects.
+    @param _name The name of the token.
+    @param _symbol The symbol that the token should be represented by.
+    @param _fundingCycleStore A contract storing all funding cycle configurations.
+    @param _baseUri A URI to use as a base for full token URIs.
+    @param _tokenUriResolver A contract responsible for resolving the token URI for each token ID.
+    @param _contractUri A URI where contract metadata can be found. 
+    @param _pricing The tier pricing according to which token distribution will be made. Must be passed in order of contribution floor, with implied increasing value.
+    @param _store A contract that stores the NFT's data.
+    @param _flags A set of flags that help define how this contract works.
+    @param _typeface The typeface NFTs are written in
+  */
+  function initialize(
+    uint256 _projectId,
+    IJBDirectory _directory,
+    string memory _name,
+    string memory _symbol,
+    IJBFundingCycleStore _fundingCycleStore,
+    string memory _baseUri,
+    IJBTokenUriResolver _tokenUriResolver,
+    string memory _contractUri,
+    JB721PricingParams memory _pricing,
+    IJBTiered721DelegateStore _store,
+    JBTiered721Flags memory _flags,
+    ITypeface _typeface
+  ) public override {
+    super.initialize(
+      _projectId,
+      _directory,
+      _name,
+      _symbol,
+      _fundingCycleStore,
+      _baseUri,
+      _tokenUriResolver,
+      _contractUri,
+      _pricing,
+      _store,
+      _flags
+    );
+    typeface = _typeface;
+  }
 
   /** 
     @notice
