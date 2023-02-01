@@ -235,14 +235,14 @@ contract DefifaDelegate is IDefifaDelegate, JB721TieredGovernance {
     return TOTAL_REDEMPTION_WEIGHT;
   }
 
-  /** 
+  /**
     @notice
     The metadata URI of the provided token ID.
 
     @dev
     Defer to the tokenUriResolver if set, otherwise, use the tokenUri set with the token's tier.
 
-    @param _tokenId The ID of the token to get the tier URI for. 
+    @param _tokenId The ID of the token to get the tier URI for.
 
     @return The token URI corresponding with the tier or the tokenUriResolver URI.
   */
@@ -259,45 +259,44 @@ contract DefifaDelegate is IDefifaDelegate, JB721TieredGovernance {
       )
     );
 
-    bytes memory fontSource = ITypeface(typeface).sourceOf(Font({weight: 500, style: 'normal'}));
     parts[2] = Base64.encode(
       abi.encodePacked(
         '<svg width="289" height="403" viewBox="0 0 289 403" xmlns="http://www.w3.org/2000/svg"><style>@font-face{font-family:"Capsules-500";src:url(data:font/truetype;charset=utf-8;base64,',
-        fontSource, // import Capsules typeface
+        ITypeface(typeface).sourceOf(Font({weight: 500, style: 'normal'})), // import Capsules typeface
         ');format("opentype");}a,a:visited,a:hover{fill:inherit;text-decoration:none;}text{font-size:16px;fill:',
-        '#777'
+        '#777',
         ';font-family:"Capsules-500",monospace;font-weight:500;white-space:pre-wrap;}#header text{fill:',
-        '#111'
+        '#111',
         ';}</style><g clip-path="url(#clip0_150_56)"><path d="M289 0H0V403H289V0Z" fill="url(#paint0_linear_150_56)"/><rect width="289" height="22" fill="',
-        '#444'
+        '#444',
         '"/><g id="header"><a href="https://juicebox.money/v2/p/',
         'defifa bruv',
         '">', // Line 0: Header
-        '<text x="16" y="16">',
-        'nah forreal',
-        '</text></a><a href="https://juicebox.money"><text x="259.25" y="16">',
-        unicode'',
-        '</text></a></g>',
-        // Line 1: FC + Time left
-        '<g filter="url(#filter1_d_150_56)"><text x="0" y="48">',
-        'hey man',
-        '</text>',
-        // Line 2: Spacer
-        '<text x="0" y="64">',
-        unicode'                              ',
-        '</text>',
-        // Line 3: Balance
-        '<text x="0" y="80">',
-        'common brotthurr',
-        '</text>',
+        // '<text x="16" y="16">',
+        // 'nah forreal',
+        // '</text></a><a href="https://juicebox.money"><text x="259.25" y="16">',
+        // unicode'',
+        // '</text></a></g>'
+        // // Line 1: FC + Time left
+        // '<g filter="url(#filter1_d_150_56)"><text x="0" y="48">',
+        // 'hey man',
+        // '</text>'
+        // // Line 2: Spacer
+        // '<text x="0" y="64">',
+        // unicode',                              ',
+        // '</text>'
+        // // Line 3: Balance
+        // '<text x="0" y="80">',
+        // 'common brotthurr',
+        // '</text>',
         '</text></g></g><defs><filter id="filter0_d_150_56" x="15.8275" y="0.039999" width="256.164" height="21.12" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset/><feGaussianBlur stdDeviation="2"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.572549 0 0 0 0 0.0745098 0 0 0 0.68 0"/><feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_150_56"/><feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_150_56" result="shape"/></filter><filter id="filter1_d_150_56" x="-3.36" y="26.04" width="294.539" height="126.12" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset/><feGaussianBlur stdDeviation="2"/><feComposite in2="hardAlpha" operator="out"/> <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.572549 0 0 0 0 0.0745098 0 0 0 0.68 0"/><feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_150_56"/><feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_150_56" result="shape"/></filter><linearGradient id="paint0_linear_150_56" x1="0" y1="202" x2="289" y2="202" gradientUnits="userSpaceOnUse"><stop stop-color="',
         '#222',
-        '"/><stop offset="0.119792" stop-color="',
-        '#666'
-        '"/><stop offset="0.848958" stop-color="',
-        '#aaa'
+        // '"/><stop offset="0.119792" stop-color="',
+        // '#666',
+        // '"/><stop offset="0.848958" stop-color="',
+        // '#aaa',
         '"/><stop offset="1" stop-color="',
-        '#ddd'
+        '#ddd',
         '"/></linearGradient><clipPath id="clip0_150_56"><rect width="289" height="403" /></clipPath></defs></svg>'
       )
     );
