@@ -239,7 +239,7 @@
     "sourceOf((uint256,string))": "bf6519ad",
     "supportsCodePoint(bytes3)": "f41135e9"
   },
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"donationAddress\",\"type\":\"address\"}],\"name\":\"SetDonationAddress\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"weight\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"style\",\"type\":\"string\"}],\"indexed\":false,\"internalType\":\"struct Font\",\"name\":\"font\",\"type\":\"tuple\"}],\"name\":\"SetSource\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"weight\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"style\",\"type\":\"string\"}],\"indexed\":false,\"internalType\":\"struct Font\",\"name\":\"font\",\"type\":\"tuple\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"sourceHash\",\"type\":\"bytes32\"}],\"name\":\"SetSourceHash\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"donationAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"weight\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"style\",\"type\":\"string\"}],\"internalType\":\"struct Font\",\"name\":\"font\",\"type\":\"tuple\"}],\"name\":\"hasSource\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"donationAddress\",\"type\":\"address\"}],\"name\":\"setDonationAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"weight\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"style\",\"type\":\"string\"}],\"internalType\":\"struct Font\",\"name\":\"font\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"source\",\"type\":\"bytes\"}],\"name\":\"setSource\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"weight\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"style\",\"type\":\"string\"}],\"internalType\":\"struct Font\",\"name\":\"font\",\"type\":\"tuple\"}],\"name\":\"sourceOf\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes3\",\"name\":\"codePoint\",\"type\":\"bytes3\"}],\"name\":\"supportsCodePoint\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"SetDonationAddress(address)\":{\"params\":{\"donationAddress\":\"New donation address.\"}},\"SetSource((uint256,string))\":{\"params\":{\"font\":\"The font the source has been set for.\"}},\"SetSourceHash((uint256,string),bytes32)\":{\"params\":{\"font\":\"The font the source hash has been set for.\",\"sourceHash\":\"The source hash that was set.\"}}},\"kind\":\"dev\",\"methods\":{\"donationAddress()\":{\"returns\":{\"_0\":\"donationAddress Donation address.\"}},\"hasSource((uint256,string))\":{\"params\":{\"font\":\"Font to check if source data exists for.\"},\"returns\":{\"_0\":\"true True if source exists.\"}},\"setDonationAddress(address)\":{\"params\":{\"donationAddress\":\"New donation address.\"}},\"setSource((uint256,string),bytes)\":{\"params\":{\"font\":\"Font to store source data for.\",\"source\":\"Source data of font.\"}},\"sourceOf((uint256,string))\":{\"params\":{\"font\":\"Font to return source data for.\"},\"returns\":{\"_0\":\"source Source data of font.\"}},\"supportsCodePoint(bytes3)\":{\"details\":\"3 bytes supports all possible unicodes.\",\"params\":{\"codePoint\":\"Character code point.\"},\"returns\":{\"_0\":\"true True if supported.\"}}},\"version\":1},\"userdoc\":{\"events\":{\"SetDonationAddress(address)\":{\"notice\":\"Emitted when the donation address is set.\"},\"SetSource((uint256,string))\":{\"notice\":\"Emitted when the source is set for a font.\"},\"SetSourceHash((uint256,string),bytes32)\":{\"notice\":\"Emitted when the source hash is set for a font.\"}},\"kind\":\"user\",\"methods\":{\"donationAddress()\":{\"notice\":\"Returns donation address\"},\"hasSource((uint256,string))\":{\"notice\":\"Checks if source data has been stored for font.\"},\"name()\":{\"notice\":\"Returns the typeface name.\"},\"setDonationAddress(address)\":{\"notice\":\"Sets a new donation address.\"},\"setSource((uint256,string),bytes)\":{\"notice\":\"Stores source data for a font.\"},\"sourceOf((uint256,string))\":{\"notice\":\"Return source data of Font.\"},\"supportsCodePoint(bytes3)\":{\"notice\":\"Check if typeface includes a glyph for a specific character code point.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/interfaces/ITypeface.sol\":\"ITypeface\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@jbx-protocol/=node_modules/@jbx-protocol/\",\":@openzeppelin/=node_modules/@openzeppelin/\",\":@paulrberg/=node_modules/@paulrberg/\",\":base64/=lib/base64/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":prb-math/=node_modules/prb-math/\"],\"viaIR\":true},\"sources\":{\"contracts/interfaces/ITypeface.sol\":{\"keccak256\":\"0x3bdeb3b12c8203db219f5f1c590f56883b5ca16c4e27c3121f14432c95ee7f3d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1b9b1ff753eae6fb780d205dc471e068390a5e9a03d0a980b4355723c1ed86f4\",\"dweb:/ipfs/QmRNL1NtNxg2RDZWh6vqQFjAsC6ccx2Ghi2fmrM6Znduc1\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"donationAddress\",\"type\":\"address\"}],\"name\":\"SetDonationAddress\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"weight\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"style\",\"type\":\"string\"}],\"indexed\":false,\"internalType\":\"struct Font\",\"name\":\"font\",\"type\":\"tuple\"}],\"name\":\"SetSource\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"weight\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"style\",\"type\":\"string\"}],\"indexed\":false,\"internalType\":\"struct Font\",\"name\":\"font\",\"type\":\"tuple\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"sourceHash\",\"type\":\"bytes32\"}],\"name\":\"SetSourceHash\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"donationAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"weight\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"style\",\"type\":\"string\"}],\"internalType\":\"struct Font\",\"name\":\"font\",\"type\":\"tuple\"}],\"name\":\"hasSource\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"donationAddress\",\"type\":\"address\"}],\"name\":\"setDonationAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"weight\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"style\",\"type\":\"string\"}],\"internalType\":\"struct Font\",\"name\":\"font\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"source\",\"type\":\"bytes\"}],\"name\":\"setSource\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"weight\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"style\",\"type\":\"string\"}],\"internalType\":\"struct Font\",\"name\":\"font\",\"type\":\"tuple\"}],\"name\":\"sourceOf\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes3\",\"name\":\"codePoint\",\"type\":\"bytes3\"}],\"name\":\"supportsCodePoint\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"SetDonationAddress(address)\":{\"params\":{\"donationAddress\":\"New donation address.\"}},\"SetSource((uint256,string))\":{\"params\":{\"font\":\"The font the source has been set for.\"}},\"SetSourceHash((uint256,string),bytes32)\":{\"params\":{\"font\":\"The font the source hash has been set for.\",\"sourceHash\":\"The source hash that was set.\"}}},\"kind\":\"dev\",\"methods\":{\"donationAddress()\":{\"returns\":{\"_0\":\"donationAddress Donation address.\"}},\"hasSource((uint256,string))\":{\"params\":{\"font\":\"Font to check if source data exists for.\"},\"returns\":{\"_0\":\"true True if source exists.\"}},\"setDonationAddress(address)\":{\"params\":{\"donationAddress\":\"New donation address.\"}},\"setSource((uint256,string),bytes)\":{\"params\":{\"font\":\"Font to store source data for.\",\"source\":\"Source data of font.\"}},\"sourceOf((uint256,string))\":{\"params\":{\"font\":\"Font to return source data for.\"},\"returns\":{\"_0\":\"source Source data of font.\"}},\"supportsCodePoint(bytes3)\":{\"details\":\"3 bytes supports all possible unicodes.\",\"params\":{\"codePoint\":\"Character code point.\"},\"returns\":{\"_0\":\"true True if supported.\"}}},\"version\":1},\"userdoc\":{\"events\":{\"SetDonationAddress(address)\":{\"notice\":\"Emitted when the donation address is set.\"},\"SetSource((uint256,string))\":{\"notice\":\"Emitted when the source is set for a font.\"},\"SetSourceHash((uint256,string),bytes32)\":{\"notice\":\"Emitted when the source hash is set for a font.\"}},\"kind\":\"user\",\"methods\":{\"donationAddress()\":{\"notice\":\"Returns donation address\"},\"hasSource((uint256,string))\":{\"notice\":\"Checks if source data has been stored for font.\"},\"name()\":{\"notice\":\"Returns the typeface name.\"},\"setDonationAddress(address)\":{\"notice\":\"Sets a new donation address.\"},\"setSource((uint256,string),bytes)\":{\"notice\":\"Stores source data for a font.\"},\"sourceOf((uint256,string))\":{\"notice\":\"Return source data of Font.\"},\"supportsCodePoint(bytes3)\":{\"notice\":\"Check if typeface includes a glyph for a specific character code point.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/interfaces/ITypeface.sol\":\"ITypeface\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@jbx-protocol/=node_modules/@jbx-protocol/\",\":@openzeppelin/=node_modules/@openzeppelin/\",\":@paulrberg/=node_modules/@paulrberg/\",\":base64/=lib/base64/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":prb-math/=node_modules/prb-math/\"]},\"sources\":{\"contracts/interfaces/ITypeface.sol\":{\"keccak256\":\"0x3bdeb3b12c8203db219f5f1c590f56883b5ca16c4e27c3121f14432c95ee7f3d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1b9b1ff753eae6fb780d205dc471e068390a5e9a03d0a980b4355723c1ed86f4\",\"dweb:/ipfs/QmRNL1NtNxg2RDZWh6vqQFjAsC6ccx2Ghi2fmrM6Znduc1\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.17+commit.8df45f5f"
@@ -560,8 +560,7 @@
       "compilationTarget": {
         "contracts/interfaces/ITypeface.sol": "ITypeface"
       },
-      "libraries": {},
-      "viaIR": true
+      "libraries": {}
     },
     "sources": {
       "contracts/interfaces/ITypeface.sol": {
@@ -577,20 +576,20 @@
   },
   "ast": {
     "absolutePath": "contracts/interfaces/ITypeface.sol",
-    "id": 8571,
+    "id": 8457,
     "exportedSymbols": {
       "Font": [
-        8497
+        8383
       ],
       "ITypeface": [
-        8570
+        8456
       ]
     },
     "nodeType": "SourceUnit",
     "src": "118:1993:9",
     "nodes": [
       {
-        "id": 8492,
+        "id": 8378,
         "nodeType": "PragmaDirective",
         "src": "118:23:9",
         "nodes": [],
@@ -602,7 +601,7 @@
         ]
       },
       {
-        "id": 8497,
+        "id": 8383,
         "nodeType": "StructDefinition",
         "src": "143:49:9",
         "nodes": [],
@@ -610,12 +609,12 @@
         "members": [
           {
             "constant": false,
-            "id": 8494,
+            "id": 8380,
             "mutability": "mutable",
             "name": "weight",
             "nameLocation": "167:6:9",
             "nodeType": "VariableDeclaration",
-            "scope": 8497,
+            "scope": 8383,
             "src": "159:14:9",
             "stateVariable": false,
             "storageLocation": "default",
@@ -624,7 +623,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 8493,
+              "id": 8379,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "159:7:9",
@@ -637,12 +636,12 @@
           },
           {
             "constant": false,
-            "id": 8496,
+            "id": 8382,
             "mutability": "mutable",
             "name": "style",
             "nameLocation": "184:5:9",
             "nodeType": "VariableDeclaration",
-            "scope": 8497,
+            "scope": 8383,
             "src": "177:12:9",
             "stateVariable": false,
             "storageLocation": "default",
@@ -651,7 +650,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 8495,
+              "id": 8381,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "177:6:9",
@@ -665,22 +664,22 @@
         ],
         "name": "Font",
         "nameLocation": "150:4:9",
-        "scope": 8571,
+        "scope": 8457,
         "visibility": "public"
       },
       {
-        "id": 8570,
+        "id": 8456,
         "nodeType": "ContractDefinition",
         "src": "194:1916:9",
         "nodes": [
           {
-            "id": 8503,
+            "id": 8389,
             "nodeType": "EventDefinition",
             "src": "331:27:9",
             "nodes": [],
             "anonymous": false,
             "documentation": {
-              "id": 8498,
+              "id": 8384,
               "nodeType": "StructuredDocumentation",
               "src": "218:110:9",
               "text": "@notice Emitted when the source is set for a font.\n @param font The font the source has been set for."
@@ -689,42 +688,42 @@
             "name": "SetSource",
             "nameLocation": "337:9:9",
             "parameters": {
-              "id": 8502,
+              "id": 8388,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8501,
+                  "id": 8387,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "font",
                   "nameLocation": "352:4:9",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8503,
+                  "scope": 8389,
                   "src": "347:9:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Font_$8497_memory_ptr",
+                    "typeIdentifier": "t_struct$_Font_$8383_memory_ptr",
                     "typeString": "struct Font"
                   },
                   "typeName": {
-                    "id": 8500,
+                    "id": 8386,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 8499,
+                      "id": 8385,
                       "name": "Font",
                       "nameLocations": [
                         "347:4:9"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 8497,
+                      "referencedDeclaration": 8383,
                       "src": "347:4:9"
                     },
-                    "referencedDeclaration": 8497,
+                    "referencedDeclaration": 8383,
                     "src": "347:4:9",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Font_$8497_storage_ptr",
+                      "typeIdentifier": "t_struct$_Font_$8383_storage_ptr",
                       "typeString": "struct Font"
                     }
                   },
@@ -735,13 +734,13 @@
             }
           },
           {
-            "id": 8511,
+            "id": 8397,
             "nodeType": "EventDefinition",
             "src": "539:51:9",
             "nodes": [],
             "anonymous": false,
             "documentation": {
-              "id": 8504,
+              "id": 8390,
               "nodeType": "StructuredDocumentation",
               "src": "362:174:9",
               "text": "@notice Emitted when the source hash is set for a font.\n @param font The font the source hash has been set for.\n @param sourceHash The source hash that was set."
@@ -750,42 +749,42 @@
             "name": "SetSourceHash",
             "nameLocation": "545:13:9",
             "parameters": {
-              "id": 8510,
+              "id": 8396,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8507,
+                  "id": 8393,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "font",
                   "nameLocation": "564:4:9",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8511,
+                  "scope": 8397,
                   "src": "559:9:9",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Font_$8497_memory_ptr",
+                    "typeIdentifier": "t_struct$_Font_$8383_memory_ptr",
                     "typeString": "struct Font"
                   },
                   "typeName": {
-                    "id": 8506,
+                    "id": 8392,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 8505,
+                      "id": 8391,
                       "name": "Font",
                       "nameLocations": [
                         "559:4:9"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 8497,
+                      "referencedDeclaration": 8383,
                       "src": "559:4:9"
                     },
-                    "referencedDeclaration": 8497,
+                    "referencedDeclaration": 8383,
                     "src": "559:4:9",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Font_$8497_storage_ptr",
+                      "typeIdentifier": "t_struct$_Font_$8383_storage_ptr",
                       "typeString": "struct Font"
                     }
                   },
@@ -793,13 +792,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 8509,
+                  "id": 8395,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "sourceHash",
                   "nameLocation": "578:10:9",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8511,
+                  "scope": 8397,
                   "src": "570:18:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -808,7 +807,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 8508,
+                    "id": 8394,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "570:7:9",
@@ -824,13 +823,13 @@
             }
           },
           {
-            "id": 8516,
+            "id": 8402,
             "nodeType": "EventDefinition",
             "src": "701:50:9",
             "nodes": [],
             "anonymous": false,
             "documentation": {
-              "id": 8512,
+              "id": 8398,
               "nodeType": "StructuredDocumentation",
               "src": "594:104:9",
               "text": "@notice Emitted when the donation address is set.\n @param donationAddress New donation address."
@@ -839,18 +838,18 @@
             "name": "SetDonationAddress",
             "nameLocation": "707:18:9",
             "parameters": {
-              "id": 8515,
+              "id": 8401,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8514,
+                  "id": 8400,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "donationAddress",
                   "nameLocation": "734:15:9",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8516,
+                  "scope": 8402,
                   "src": "726:23:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -859,7 +858,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 8513,
+                    "id": 8399,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "726:7:9",
@@ -876,12 +875,12 @@
             }
           },
           {
-            "id": 8522,
+            "id": 8408,
             "nodeType": "FunctionDefinition",
             "src": "796:54:9",
             "nodes": [],
             "documentation": {
-              "id": 8517,
+              "id": 8403,
               "nodeType": "StructuredDocumentation",
               "src": "755:38:9",
               "text": "@notice Returns the typeface name."
@@ -893,23 +892,23 @@
             "name": "name",
             "nameLocation": "805:4:9",
             "parameters": {
-              "id": 8518,
+              "id": 8404,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "809:2:9"
             },
             "returnParameters": {
-              "id": 8521,
+              "id": 8407,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8520,
+                  "id": 8406,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8522,
+                  "scope": 8408,
                   "src": "835:13:9",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -918,7 +917,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 8519,
+                    "id": 8405,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "835:6:9",
@@ -932,18 +931,18 @@
               ],
               "src": "834:15:9"
             },
-            "scope": 8570,
+            "scope": 8456,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 8530,
+            "id": 8416,
             "nodeType": "FunctionDefinition",
             "src": "1074:74:9",
             "nodes": [],
             "documentation": {
-              "id": 8523,
+              "id": 8409,
               "nodeType": "StructuredDocumentation",
               "src": "854:217:9",
               "text": "@notice Check if typeface includes a glyph for a specific character code point.\n @dev 3 bytes supports all possible unicodes.\n @param codePoint Character code point.\n @return true True if supported."
@@ -955,17 +954,17 @@
             "name": "supportsCodePoint",
             "nameLocation": "1083:17:9",
             "parameters": {
-              "id": 8526,
+              "id": 8412,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8525,
+                  "id": 8411,
                   "mutability": "mutable",
                   "name": "codePoint",
                   "nameLocation": "1108:9:9",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8530,
+                  "scope": 8416,
                   "src": "1101:16:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -974,7 +973,7 @@
                     "typeString": "bytes3"
                   },
                   "typeName": {
-                    "id": 8524,
+                    "id": 8410,
                     "name": "bytes3",
                     "nodeType": "ElementaryTypeName",
                     "src": "1101:6:9",
@@ -989,17 +988,17 @@
               "src": "1100:18:9"
             },
             "returnParameters": {
-              "id": 8529,
+              "id": 8415,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8528,
+                  "id": 8414,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8530,
+                  "scope": 8416,
                   "src": "1142:4:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1008,7 +1007,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 8527,
+                    "id": 8413,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1142:4:9",
@@ -1022,18 +1021,18 @@
               ],
               "src": "1141:6:9"
             },
-            "scope": 8570,
+            "scope": 8456,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 8539,
+            "id": 8425,
             "nodeType": "FunctionDefinition",
             "src": "1286:73:9",
             "nodes": [],
             "documentation": {
-              "id": 8531,
+              "id": 8417,
               "nodeType": "StructuredDocumentation",
               "src": "1152:131:9",
               "text": "@notice Return source data of Font.\n @param font Font to return source data for.\n @return source Source data of font."
@@ -1045,41 +1044,41 @@
             "name": "sourceOf",
             "nameLocation": "1295:8:9",
             "parameters": {
-              "id": 8535,
+              "id": 8421,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8534,
+                  "id": 8420,
                   "mutability": "mutable",
                   "name": "font",
                   "nameLocation": "1316:4:9",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8539,
+                  "scope": 8425,
                   "src": "1304:16:9",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Font_$8497_memory_ptr",
+                    "typeIdentifier": "t_struct$_Font_$8383_memory_ptr",
                     "typeString": "struct Font"
                   },
                   "typeName": {
-                    "id": 8533,
+                    "id": 8419,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 8532,
+                      "id": 8418,
                       "name": "Font",
                       "nameLocations": [
                         "1304:4:9"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 8497,
+                      "referencedDeclaration": 8383,
                       "src": "1304:4:9"
                     },
-                    "referencedDeclaration": 8497,
+                    "referencedDeclaration": 8383,
                     "src": "1304:4:9",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Font_$8497_storage_ptr",
+                      "typeIdentifier": "t_struct$_Font_$8383_storage_ptr",
                       "typeString": "struct Font"
                     }
                   },
@@ -1089,17 +1088,17 @@
               "src": "1303:18:9"
             },
             "returnParameters": {
-              "id": 8538,
+              "id": 8424,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8537,
+                  "id": 8423,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8539,
+                  "scope": 8425,
                   "src": "1345:12:9",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1108,7 +1107,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 8536,
+                    "id": 8422,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "1345:5:9",
@@ -1122,18 +1121,18 @@
               ],
               "src": "1344:14:9"
             },
-            "scope": 8570,
+            "scope": 8456,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 8548,
+            "id": 8434,
             "nodeType": "FunctionDefinition",
             "src": "1526:66:9",
             "nodes": [],
             "documentation": {
-              "id": 8540,
+              "id": 8426,
               "nodeType": "StructuredDocumentation",
               "src": "1363:160:9",
               "text": "@notice Checks if source data has been stored for font.\n @param font Font to check if source data exists for.\n @return true True if source exists."
@@ -1145,41 +1144,41 @@
             "name": "hasSource",
             "nameLocation": "1535:9:9",
             "parameters": {
-              "id": 8544,
+              "id": 8430,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8543,
+                  "id": 8429,
                   "mutability": "mutable",
                   "name": "font",
                   "nameLocation": "1557:4:9",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8548,
+                  "scope": 8434,
                   "src": "1545:16:9",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Font_$8497_memory_ptr",
+                    "typeIdentifier": "t_struct$_Font_$8383_memory_ptr",
                     "typeString": "struct Font"
                   },
                   "typeName": {
-                    "id": 8542,
+                    "id": 8428,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 8541,
+                      "id": 8427,
                       "name": "Font",
                       "nameLocations": [
                         "1545:4:9"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 8497,
+                      "referencedDeclaration": 8383,
                       "src": "1545:4:9"
                     },
-                    "referencedDeclaration": 8497,
+                    "referencedDeclaration": 8383,
                     "src": "1545:4:9",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Font_$8497_storage_ptr",
+                      "typeIdentifier": "t_struct$_Font_$8383_storage_ptr",
                       "typeString": "struct Font"
                     }
                   },
@@ -1189,17 +1188,17 @@
               "src": "1544:18:9"
             },
             "returnParameters": {
-              "id": 8547,
+              "id": 8433,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8546,
+                  "id": 8432,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8548,
+                  "scope": 8434,
                   "src": "1586:4:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1208,7 +1207,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 8545,
+                    "id": 8431,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1586:4:9",
@@ -1222,18 +1221,18 @@
               ],
               "src": "1585:6:9"
             },
-            "scope": 8570,
+            "scope": 8456,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 8557,
+            "id": 8443,
             "nodeType": "FunctionDefinition",
             "src": "1731:67:9",
             "nodes": [],
             "documentation": {
-              "id": 8549,
+              "id": 8435,
               "nodeType": "StructuredDocumentation",
               "src": "1596:132:9",
               "text": "@notice Stores source data for a font.\n @param font Font to store source data for.\n @param source Source data of font."
@@ -1245,41 +1244,41 @@
             "name": "setSource",
             "nameLocation": "1740:9:9",
             "parameters": {
-              "id": 8555,
+              "id": 8441,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8552,
+                  "id": 8438,
                   "mutability": "mutable",
                   "name": "font",
                   "nameLocation": "1762:4:9",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8557,
+                  "scope": 8443,
                   "src": "1750:16:9",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Font_$8497_memory_ptr",
+                    "typeIdentifier": "t_struct$_Font_$8383_memory_ptr",
                     "typeString": "struct Font"
                   },
                   "typeName": {
-                    "id": 8551,
+                    "id": 8437,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 8550,
+                      "id": 8436,
                       "name": "Font",
                       "nameLocations": [
                         "1750:4:9"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 8497,
+                      "referencedDeclaration": 8383,
                       "src": "1750:4:9"
                     },
-                    "referencedDeclaration": 8497,
+                    "referencedDeclaration": 8383,
                     "src": "1750:4:9",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Font_$8497_storage_ptr",
+                      "typeIdentifier": "t_struct$_Font_$8383_storage_ptr",
                       "typeString": "struct Font"
                     }
                   },
@@ -1287,12 +1286,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 8554,
+                  "id": 8440,
                   "mutability": "mutable",
                   "name": "source",
                   "nameLocation": "1781:6:9",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8557,
+                  "scope": 8443,
                   "src": "1768:19:9",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1301,7 +1300,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 8553,
+                    "id": 8439,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "1768:5:9",
@@ -1316,23 +1315,23 @@
               "src": "1749:39:9"
             },
             "returnParameters": {
-              "id": 8556,
+              "id": 8442,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1797:0:9"
             },
-            "scope": 8570,
+            "scope": 8456,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 8563,
+            "id": 8449,
             "nodeType": "FunctionDefinition",
             "src": "1896:62:9",
             "nodes": [],
             "documentation": {
-              "id": 8558,
+              "id": 8444,
               "nodeType": "StructuredDocumentation",
               "src": "1802:91:9",
               "text": "@notice Sets a new donation address.\n @param donationAddress New donation address."
@@ -1344,17 +1343,17 @@
             "name": "setDonationAddress",
             "nameLocation": "1905:18:9",
             "parameters": {
-              "id": 8561,
+              "id": 8447,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8560,
+                  "id": 8446,
                   "mutability": "mutable",
                   "name": "donationAddress",
                   "nameLocation": "1932:15:9",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8563,
+                  "scope": 8449,
                   "src": "1924:23:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1363,7 +1362,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 8559,
+                    "id": 8445,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1924:7:9",
@@ -1379,23 +1378,23 @@
               "src": "1923:25:9"
             },
             "returnParameters": {
-              "id": 8562,
+              "id": 8448,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1957:0:9"
             },
-            "scope": 8570,
+            "scope": 8456,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 8569,
+            "id": 8455,
             "nodeType": "FunctionDefinition",
             "src": "2049:59:9",
             "nodes": [],
             "documentation": {
-              "id": 8564,
+              "id": 8450,
               "nodeType": "StructuredDocumentation",
               "src": "1962:84:9",
               "text": "@notice Returns donation address\n @return donationAddress Donation address."
@@ -1407,23 +1406,23 @@
             "name": "donationAddress",
             "nameLocation": "2058:15:9",
             "parameters": {
-              "id": 8565,
+              "id": 8451,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2073:2:9"
             },
             "returnParameters": {
-              "id": 8568,
+              "id": 8454,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8567,
+                  "id": 8453,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8569,
+                  "scope": 8455,
                   "src": "2099:7:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1432,7 +1431,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 8566,
+                    "id": 8452,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2099:7:9",
@@ -1447,7 +1446,7 @@
               ],
               "src": "2098:9:9"
             },
-            "scope": 8570,
+            "scope": 8456,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -1460,11 +1459,11 @@
         "contractKind": "interface",
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          8570
+          8456
         ],
         "name": "ITypeface",
         "nameLocation": "204:9:9",
-        "scope": 8571,
+        "scope": 8457,
         "usedErrors": []
       }
     ],

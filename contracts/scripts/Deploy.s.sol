@@ -26,7 +26,7 @@ contract DeployMainnet is Script {
   // We don't have to do this effenciently since this contract never gets deployed, its just used to build the broadcast txs
   string _name = 'Testing 910902';
   string _symbol = 'TEST';
-  string _projectMetadataUri = 'Qmd6KVtevLjU6o9xTiJ2XcmhENvnMmgpEZGhgJZXCLtLVx';
+  string _projectMetadataUri = '';
   uint16 _reserved = 9; // 1 reserved NFT mintable to reserved beneficiary for every 9 NFTs minted outwardly. Inclusive, so 1 reserved can be minted as soon as the first token is minted outwardly.
 
   function run() external {
@@ -140,7 +140,7 @@ contract DeployGoerli is Script {
   // We don't have to do this effenciently since this contract never gets deployed, its just used to build the broadcast txs
   string _name = 'Testing 910902';
   string _symbol = 'TEST';
-  string _projectMetadataUri = 'i';
+  string _projectMetadataUri = '';
   uint16 _reserved = 9; // 1 reserved NFT mintable to reserved beneficiary for every 9 NFTs minted outwardly. Inclusive, so 1 reserved can be minted as soon as the first token is minted outwardly.
 
   function run() external {
