@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.16;
 
-import {ITypeface, Font} from '../lib/typeface/contracts/interfaces/ITypeface.sol';
+import 'lib/typeface/contracts/interfaces/ITypeface.sol';
 
-library JBCapsulesFontImporter {
+library DefifaFontImporter {
   // @notice Gets the Base64 encoded Capsules-500.otf typeface
   /// @return The Base64 encoded font file
   function getSkinnyFontSource() internal view returns (bytes memory) {

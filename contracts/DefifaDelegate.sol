@@ -6,6 +6,7 @@ import '@jbx-protocol/juice-contracts-v3/contracts/interfaces/IJBSingleTokenPaym
 import 'lib/base64/base64.sol';
 
 import './interfaces/IDefifaDelegate.sol';
+import './libraries/DefifaFontImporter.sol';
 
 /** 
   @title
@@ -247,61 +248,69 @@ contract DefifaDelegate is IDefifaDelegate, JB721TieredGovernance {
     @return The token URI corresponding with the tier or the tokenUriResolver URI.
   */
   function tokenURI(uint256 _tokenId) public view override returns (string memory) {
+    tokenId; // do something with me
     string[] memory parts = new string[](4);
     parts[0] = string('data:application/json;base64,');
     parts[1] = string(
       abi.encodePacked(
-        '{"name":"',
-        'defifa',
-        '", "description":"',
-        'scoop me.',
+        '{"name":"XYZ",',
+        '"description":"Description Text",',
         '"image":"data:image/svg+xml;base64,'
       )
     );
+    string memory _title = 'PREMIER LEAGUE 2023-2024';
+    string memory _titleFontSize;
+    if (bytes(_title).length < 35) _titleFontSize = '24';
+    else _titleFontSize = '20';
+
+    string memory _word = 'LIVERPOOL';
+    string memory _fontSize;
+    if (bytes(_word).length < 3) _fontSize = '240';
+    else if (bytes(_word).length < 5) _fontSize = '200';
+    else if (bytes(_word).length < 8) _fontSize = '140';
+    else if (bytes(_word).length < 10) _fontSize = '90';
+    else if (bytes(_word).length < 12) _fontSize = '80';
+    else if (bytes(_word).length < 16) _fontSize = '60';
+    else if (bytes(_word).length < 23) _fontSize = '40';
+    else if (bytes(_word).length < 30) _fontSize = '30';
+    else if (bytes(_word).length < 35) _fontSize = '20';
+    else _fontSize = '16';
 
     parts[2] = Base64.encode(
       abi.encodePacked(
-        '<svg width="289" height="403" viewBox="0 0 289 403" xmlns="http://www.w3.org/2000/svg"><style>@font-face{font-family:"Capsules-500";src:url(data:font/truetype;charset=utf-8;base64,',
-        ITypeface(typeface).sourceOf(Font({weight: 500, style: 'normal'})), // import Capsules typeface
-        ');format("opentype");}a,a:visited,a:hover{fill:inherit;text-decoration:none;}text{font-size:16px;fill:',
-        '#777',
-        ';font-family:"Capsules-500",monospace;font-weight:500;white-space:pre-wrap;}#header text{fill:',
-        '#111',
-        ';}</style><g clip-path="url(#clip0_150_56)"><path d="M289 0H0V403H289V0Z" fill="url(#paint0_linear_150_56)"/><rect width="289" height="22" fill="',
-        '#444',
-        '"/><g id="header"><a href="https://juicebox.money/v2/p/',
-        'defifa bruv',
-        '">', // Line 0: Header
-        // '<text x="16" y="16">',
-        // 'nah forreal',
-        // '</text></a><a href="https://juicebox.money"><text x="259.25" y="16">',
-        // unicode'',
-        // '</text></a></g>'
-        // // Line 1: FC + Time left
-        // '<g filter="url(#filter1_d_150_56)"><text x="0" y="48">',
-        // 'hey man',
-        // '</text>'
-        // // Line 2: Spacer
-        // '<text x="0" y="64">',
-        // unicode',                              ',
-        // '</text>'
-        // // Line 3: Balance
-        // '<text x="0" y="80">',
-        // 'common brotthurr',
-        // '</text>',
-        '</text></g></g><defs><filter id="filter0_d_150_56" x="15.8275" y="0.039999" width="256.164" height="21.12" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset/><feGaussianBlur stdDeviation="2"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.572549 0 0 0 0 0.0745098 0 0 0 0.68 0"/><feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_150_56"/><feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_150_56" result="shape"/></filter><filter id="filter1_d_150_56" x="-3.36" y="26.04" width="294.539" height="126.12" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset/><feGaussianBlur stdDeviation="2"/><feComposite in2="hardAlpha" operator="out"/> <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.572549 0 0 0 0 0.0745098 0 0 0 0.68 0"/><feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_150_56"/><feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_150_56" result="shape"/></filter><linearGradient id="paint0_linear_150_56" x1="0" y1="202" x2="289" y2="202" gradientUnits="userSpaceOnUse"><stop stop-color="',
-        '#222',
-        // '"/><stop offset="0.119792" stop-color="',
-        // '#666',
-        // '"/><stop offset="0.848958" stop-color="',
-        // '#aaa',
-        '"/><stop offset="1" stop-color="',
-        '#ddd',
-        '"/></linearGradient><clipPath id="clip0_150_56"><rect width="289" height="403" /></clipPath></defs></svg>'
+        '<svg width="500" height="500" viewBox="0 0 100% 100%" xmlns="http://www.w3.org/2000/svg">',
+        '<style>@font-face{font-family:"Capsules-300";src:url(data:font/truetype;charset=utf-8;base64,',
+        DefifaFontImporter.getSkinnyFontSource(),
+        ');format("opentype");}',
+        '@font-face{font-family:"Capsules-700";src:url(data:font/truetype;charset=utf-8;base64,',
+        DefifaFontImporter.getBeefyFontSource(),
+        ');format("opentype");}',
+        'text{fill:#c0b3f1;white-space:pre-wrap; width:100%; }</style>',
+        '<rect width="100vw" height="100vh" fill="#181424"/>',
+        '<text x="10" y="20" style="font-size:16px; font-family: Capsules-300; font-weight:300; fill: #be69a7;">DEFIFA</text>',
+        '<text x="10" y="40" style="font-size:',
+        _titleFontSize,
+        'px; font-family: Capsules-300; font-weight:300;">',
+        _title,
+        '</text>',
+        '<text x="10" y="60" style="font-size:16px; font-family: Capsules-300; font-weight:300; fill: #393059;">GAME ID: 123</text>',
+        '<text x="10" y="440" style="font-size:16px; font-family: Capsules-300; font-weight:300; fill: #393059;">TOKEN ID: 1000003</text>',
+        '<text x="10" y="460" style="font-size:16px; font-family: Capsules-300; font-weight:300; fill: #393059;">VALUE: 3 ETH</text>',
+        '<text x="10" y="480" style="font-size:16px; font-family: Capsules-300; font-weight:300; fill: #393059;">RARITY: 1/10</text>',
+        '<text textLength="500" lengthAdjust="spacing" x="50%" y="50%" style="font-size:',
+        _fontSize,
+        'px; font-family: Capsules-700; font-weight:700; text-anchor:middle; dominant-baseline:middle; ">',
+        _word,
+        '</text>',
+        '</svg>'
       )
     );
     parts[3] = string('"}');
-    return string.concat(parts[0], Base64.encode(abi.encodePacked(parts[1], parts[2], parts[3])));
+    string memory uri = string.concat(
+      parts[0],
+      Base64.encode(abi.encodePacked(parts[1], parts[2], parts[3]))
+    );
+    return uri;
   }
 
   //*********************************************************************//
