@@ -2,8 +2,8 @@
 pragma solidity ^0.8.16;
 
 import '@jbx-protocol/juice-721-delegate/contracts/interfaces/IJB721TieredGovernance.sol';
+import 'lib/typeface/contracts/interfaces/ITypeface.sol';
 
-import './ITypeface.sol';
 import './../structs/DefifaTierRedemptionWeight.sol';
 
 interface IDefifaDelegate is IJB721TieredGovernance {

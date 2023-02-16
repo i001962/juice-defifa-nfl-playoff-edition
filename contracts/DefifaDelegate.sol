@@ -248,7 +248,7 @@ contract DefifaDelegate is IDefifaDelegate, JB721TieredGovernance {
     @return The token URI corresponding with the tier or the tokenUriResolver URI.
   */
   function tokenURI(uint256 _tokenId) public view override returns (string memory) {
-    tokenId; // do something with me
+    _tokenId; // do something with me
     string[] memory parts = new string[](4);
     parts[0] = string('data:application/json;base64,');
     parts[1] = string(
