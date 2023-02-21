@@ -1,0 +1,628 @@
+{
+  "abi": [],
+  "bytecode": {
+    "object": "0x60808060405234601757603a9081601d823930815050f35b600080fdfe600080fdfea26469706673582212202f82cdf517e4355044c280ff6592fd6c6bf1e5359aba3ef3bfbee8bb8759112564736f6c63430008110033",
+    "sourceMap": "117:634:10:-:0;;;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x600080fdfea26469706673582212202f82cdf517e4355044c280ff6592fd6c6bf1e5359aba3ef3bfbee8bb8759112564736f6c63430008110033",
+    "sourceMap": "117:634:10:-:0;;",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/libraries/DefifaFontImporter.sol\":\"DefifaFontImporter\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@jbx-protocol/=node_modules/@jbx-protocol/\",\":@openzeppelin/=node_modules/@openzeppelin/\",\":@paulrberg/=node_modules/@paulrberg/\",\":base64/=lib/base64/\",\":capsules/=lib/capsules/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":prb-math/=node_modules/prb-math/\",\":typeface/=lib/typeface/contracts/\"],\"viaIR\":true},\"sources\":{\"contracts/libraries/DefifaFontImporter.sol\":{\"keccak256\":\"0x062b56e9f4e89745642084b2595e19c6c030a7df0c575eb35f79f947780a3d4e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://365a8d0ef3d7174009257bac32b7dded27f8e49e6b3ef12e5cf2ea1059edc1e2\",\"dweb:/ipfs/QmPqVuLiG2cmXiLAz3HmTNYNWmrTwSfC411Ei8hc611swc\"]},\"lib/typeface/contracts/interfaces/ITypeface.sol\":{\"keccak256\":\"0x6e79f0dffbd38af3941df702b99d537c7c8aa0b604b3833d80da0343e51c2c95\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://07a9e3494fab50454b7caf1295440b32cfe56054292979fb0ad5107b405f2685\",\"dweb:/ipfs/QmUWD8smvCAreeutvYLak5cwsQRZ9gviMrwwiMz5yRzyqN\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.17+commit.8df45f5f"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":@jbx-protocol/=node_modules/@jbx-protocol/",
+        ":@openzeppelin/=node_modules/@openzeppelin/",
+        ":@paulrberg/=node_modules/@paulrberg/",
+        ":base64/=lib/base64/",
+        ":capsules/=lib/capsules/contracts/",
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":forge-std/=lib/forge-std/src/",
+        ":prb-math/=node_modules/prb-math/",
+        ":typeface/=lib/typeface/contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "contracts/libraries/DefifaFontImporter.sol": "DefifaFontImporter"
+      },
+      "libraries": {},
+      "viaIR": true
+    },
+    "sources": {
+      "contracts/libraries/DefifaFontImporter.sol": {
+        "keccak256": "0x062b56e9f4e89745642084b2595e19c6c030a7df0c575eb35f79f947780a3d4e",
+        "urls": [
+          "bzz-raw://365a8d0ef3d7174009257bac32b7dded27f8e49e6b3ef12e5cf2ea1059edc1e2",
+          "dweb:/ipfs/QmPqVuLiG2cmXiLAz3HmTNYNWmrTwSfC411Ei8hc611swc"
+        ],
+        "license": "MIT"
+      },
+      "lib/typeface/contracts/interfaces/ITypeface.sol": {
+        "keccak256": "0x6e79f0dffbd38af3941df702b99d537c7c8aa0b604b3833d80da0343e51c2c95",
+        "urls": [
+          "bzz-raw://07a9e3494fab50454b7caf1295440b32cfe56054292979fb0ad5107b405f2685",
+          "dweb:/ipfs/QmUWD8smvCAreeutvYLak5cwsQRZ9gviMrwwiMz5yRzyqN"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "contracts/libraries/DefifaFontImporter.sol",
+    "id": 3157,
+    "exportedSymbols": {
+      "DefifaFontImporter": [
+        3156
+      ],
+      "Font": [
+        30463
+      ],
+      "ITypeface": [
+        30536
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:720:10",
+    "nodes": [
+      {
+        "id": 3120,
+        "nodeType": "PragmaDirective",
+        "src": "32:24:10",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".16"
+        ]
+      },
+      {
+        "id": 3121,
+        "nodeType": "ImportDirective",
+        "src": "58:57:10",
+        "nodes": [],
+        "absolutePath": "lib/typeface/contracts/interfaces/ITypeface.sol",
+        "file": "lib/typeface/contracts/interfaces/ITypeface.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 3157,
+        "sourceUnit": 30537,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 3156,
+        "nodeType": "ContractDefinition",
+        "src": "117:634:10",
+        "nodes": [
+          {
+            "id": 3138,
+            "nodeType": "FunctionDefinition",
+            "src": "254:193:10",
+            "nodes": [],
+            "body": {
+              "id": 3137,
+              "nodeType": "Block",
+              "src": "322:125:10",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "hexValue": "333030",
+                            "id": 3132,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "403:3:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_300_by_1",
+                              "typeString": "int_const 300"
+                            },
+                            "value": "300"
+                          },
+                          {
+                            "hexValue": "6e6f726d616c",
+                            "id": 3133,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "string",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "408:8:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_stringliteral_c75a36e6ff8c24bab57c92d42ea7dcdecc261cbbf377444a0b6e3ec4e9129efe",
+                              "typeString": "literal_string \"normal\""
+                            },
+                            "value": "normal"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_300_by_1",
+                              "typeString": "int_const 300"
+                            },
+                            {
+                              "typeIdentifier": "t_stringliteral_c75a36e6ff8c24bab57c92d42ea7dcdecc261cbbf377444a0b6e3ec4e9129efe",
+                              "typeString": "literal_string \"normal\""
+                            }
+                          ],
+                          "id": 3131,
+                          "name": "Font",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 30463,
+                          "src": "398:4:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_struct$_Font_$30463_storage_ptr_$",
+                            "typeString": "type(struct Font storage pointer)"
+                          }
+                        },
+                        "id": 3134,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "structConstructorCall",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "398:19:10",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Font_$30463_memory_ptr",
+                          "typeString": "struct Font memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Font_$30463_memory_ptr",
+                          "typeString": "struct Font memory"
+                        }
+                      ],
+                      "expression": {
+                        "arguments": [
+                          {
+                            "hexValue": "307841373762374439334537396631453642346637374661423239643965663835373333413344343441",
+                            "id": 3128,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "345:42:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            "value": "0xA77b7D93E79f1E6B4f77FaB29d9ef85733A3D44A"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 3127,
+                          "name": "ITypeface",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 30536,
+                          "src": "335:9:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_ITypeface_$30536_$",
+                            "typeString": "type(contract ITypeface)"
+                          }
+                        },
+                        "id": 3129,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "335:53:10",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ITypeface_$30536",
+                          "typeString": "contract ITypeface"
+                        }
+                      },
+                      "id": 3130,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "389:8:10",
+                      "memberName": "sourceOf",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 30505,
+                      "src": "335:62:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_struct$_Font_$30463_memory_ptr_$returns$_t_bytes_memory_ptr_$",
+                        "typeString": "function (struct Font memory) view external returns (bytes memory)"
+                      }
+                    },
+                    "id": 3135,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "335:83:10",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_memory_ptr",
+                      "typeString": "bytes memory"
+                    }
+                  },
+                  "functionReturnParameters": 3126,
+                  "id": 3136,
+                  "nodeType": "Return",
+                  "src": "328:90:10"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 3122,
+              "nodeType": "StructuredDocumentation",
+              "src": "211:40:10",
+              "text": "@return The Base64 encoded font file"
+            },
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getSkinnyFontSource",
+            "nameLocation": "263:19:10",
+            "parameters": {
+              "id": 3123,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "282:2:10"
+            },
+            "returnParameters": {
+              "id": 3126,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3125,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3138,
+                  "src": "308:12:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 3124,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "308:5:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "307:14:10"
+            },
+            "scope": 3156,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "id": 3155,
+            "nodeType": "FunctionDefinition",
+            "src": "557:192:10",
+            "nodes": [],
+            "body": {
+              "id": 3154,
+              "nodeType": "Block",
+              "src": "624:125:10",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "hexValue": "373030",
+                            "id": 3149,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "705:3:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_700_by_1",
+                              "typeString": "int_const 700"
+                            },
+                            "value": "700"
+                          },
+                          {
+                            "hexValue": "6e6f726d616c",
+                            "id": 3150,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "string",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "710:8:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_stringliteral_c75a36e6ff8c24bab57c92d42ea7dcdecc261cbbf377444a0b6e3ec4e9129efe",
+                              "typeString": "literal_string \"normal\""
+                            },
+                            "value": "normal"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_rational_700_by_1",
+                              "typeString": "int_const 700"
+                            },
+                            {
+                              "typeIdentifier": "t_stringliteral_c75a36e6ff8c24bab57c92d42ea7dcdecc261cbbf377444a0b6e3ec4e9129efe",
+                              "typeString": "literal_string \"normal\""
+                            }
+                          ],
+                          "id": 3148,
+                          "name": "Font",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 30463,
+                          "src": "700:4:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_struct$_Font_$30463_storage_ptr_$",
+                            "typeString": "type(struct Font storage pointer)"
+                          }
+                        },
+                        "id": 3151,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "structConstructorCall",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "700:19:10",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Font_$30463_memory_ptr",
+                          "typeString": "struct Font memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Font_$30463_memory_ptr",
+                          "typeString": "struct Font memory"
+                        }
+                      ],
+                      "expression": {
+                        "arguments": [
+                          {
+                            "hexValue": "307841373762374439334537396631453642346637374661423239643965663835373333413344343441",
+                            "id": 3145,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "647:42:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            "value": "0xA77b7D93E79f1E6B4f77FaB29d9ef85733A3D44A"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 3144,
+                          "name": "ITypeface",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 30536,
+                          "src": "637:9:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_ITypeface_$30536_$",
+                            "typeString": "type(contract ITypeface)"
+                          }
+                        },
+                        "id": 3146,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "637:53:10",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ITypeface_$30536",
+                          "typeString": "contract ITypeface"
+                        }
+                      },
+                      "id": 3147,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "691:8:10",
+                      "memberName": "sourceOf",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 30505,
+                      "src": "637:62:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_struct$_Font_$30463_memory_ptr_$returns$_t_bytes_memory_ptr_$",
+                        "typeString": "function (struct Font memory) view external returns (bytes memory)"
+                      }
+                    },
+                    "id": 3152,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "637:83:10",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_memory_ptr",
+                      "typeString": "bytes memory"
+                    }
+                  },
+                  "functionReturnParameters": 3143,
+                  "id": 3153,
+                  "nodeType": "Return",
+                  "src": "630:90:10"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 3139,
+              "nodeType": "StructuredDocumentation",
+              "src": "514:40:10",
+              "text": "@return The Base64 encoded font file"
+            },
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getBeefyFontSource",
+            "nameLocation": "566:18:10",
+            "parameters": {
+              "id": 3140,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "584:2:10"
+            },
+            "returnParameters": {
+              "id": 3143,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3142,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3155,
+                  "src": "610:12:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 3141,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "610:5:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "609:14:10"
+            },
+            "scope": 3156,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "DefifaFontImporter",
+        "contractDependencies": [],
+        "contractKind": "library",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          3156
+        ],
+        "name": "DefifaFontImporter",
+        "nameLocation": "125:18:10",
+        "scope": 3157,
+        "usedErrors": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 10
+}
