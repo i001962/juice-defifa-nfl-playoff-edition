@@ -84,6 +84,14 @@ contract DefifaDelegate is IDefifaDelegate, JB721TieredGovernance {
   */
   mapping(uint256 => uint256) private _redeemedFromTier;
 
+  /**
+    @notice
+    The names of each tier.
+
+    @dev _tierId The ID of the tier to get a name for.
+  */
+  mapping(uint256 => string) private _tierNameOf;
+
   //*********************************************************************//
   // --------------------- public stored properties ------------------- //
   //*********************************************************************//
@@ -248,22 +256,26 @@ contract DefifaDelegate is IDefifaDelegate, JB721TieredGovernance {
     @return The token URI corresponding with the tier or the tokenUriResolver URI.
   */
   function tokenURI(uint256 _tokenId) public view override returns (string memory) {
+    // Get a reference to the tier.
+    // JB721Tier memory _tier = store.tierOfTokenId(address(this), _tokenId);
+
     _tokenId; // do something with me
     string[] memory parts = new string[](4);
     parts[0] = string('data:application/json;base64,');
+    string memory _title = name();
     parts[1] = string(
       abi.encodePacked(
-        '{"name":"XYZ",',
-        '"description":"Description Text",',
+        '{"name":"',
+        _title,
+        '","description":"Team with ID",',
         '"image":"data:image/svg+xml;base64,'
       )
     );
-    string memory _title = 'PREMIER LEAGUE 2023-2024';
     string memory _titleFontSize;
     if (bytes(_title).length < 35) _titleFontSize = '24';
     else _titleFontSize = '20';
 
-    string memory _word = 'LIVERPOOL';
+    string memory _word = _tierNameOf[0];
     string memory _fontSize;
     if (bytes(_word).length < 3) _fontSize = '240';
     else if (bytes(_word).length < 5) _fontSize = '200';
@@ -343,7 +355,8 @@ contract DefifaDelegate is IDefifaDelegate, JB721TieredGovernance {
     JB721PricingParams memory _pricing,
     IJBTiered721DelegateStore _store,
     JBTiered721Flags memory _flags,
-    ITypeface _typeface
+    ITypeface _typeface,
+    string[] memory _tierNames
   ) public override {
     super.initialize(
       _projectId,
@@ -358,7 +371,21 @@ contract DefifaDelegate is IDefifaDelegate, JB721TieredGovernance {
       _store,
       _flags
     );
+    // Store the typeface.
     typeface = _typeface;
+
+    // Keep a reference to the number of tier names.
+    uint256 _numberOfTierNames = _tierNames.length;
+
+    // Set the name for each tier.
+    for (uint256 _i; _i < _numberOfTierNames; ) {
+      // Set the tier name.
+      _tierNameOf[_i + 1] = _tierNames[_i];
+
+      unchecked {
+        ++_i;
+      }
+    }
   }
 
   /** 

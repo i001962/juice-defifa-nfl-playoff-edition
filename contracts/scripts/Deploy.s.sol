@@ -33,6 +33,7 @@ contract DeployMainnet is Script {
     vm.startBroadcast();
  
     JB721TierParams[] memory _tiers = new JB721TierParams[](14);
+    string[] memory _tierNames = new string[](14);
 
     for (uint256 _i; _i < 14; ) {
       _tiers[_i] = JB721TierParams({
@@ -51,7 +52,7 @@ contract DeployMainnet is Script {
         shouldUseRoyaltyBeneficiaryAsDefault: false,
         transfersPausable: false
       });
-
+      _tierNames[_i] = "some tier";
       unchecked {
         ++_i;
       }
@@ -63,6 +64,7 @@ contract DeployMainnet is Script {
       baseUri: '',
       contractUri: '',
       tiers: _tiers,
+      tierNames: _tierNames,
       store: store,
       // Set owner will be set to the Governor later on in this script.
       owner: address(0)
@@ -147,6 +149,7 @@ contract DeployGoerli is Script {
     vm.startBroadcast();
  
     JB721TierParams[] memory _tiers = new JB721TierParams[](14);
+    string[] memory _tierNames = new string[](14);
 
     for (uint256 _i; _i < 14; ) {
       _tiers[_i] = JB721TierParams({
@@ -166,6 +169,8 @@ contract DeployGoerli is Script {
         transfersPausable: false
       });
 
+      _tierNames[_i] = "some tier";
+
       unchecked {
         ++_i;
       }
@@ -177,6 +182,7 @@ contract DeployGoerli is Script {
       baseUri: '',
       contractUri: '',
       tiers: _tiers,
+      tierNames: _tierNames,
       store: store,
       // Set owner will be set to the Governor later on in this script.
       owner: address(0)

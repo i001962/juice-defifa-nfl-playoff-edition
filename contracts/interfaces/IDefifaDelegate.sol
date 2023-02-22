@@ -27,6 +27,7 @@ interface IDefifaDelegate is IJB721TieredGovernance {
     JB721PricingParams memory _pricing,
     IJBTiered721DelegateStore _store,
     JBTiered721Flags memory _flags,
-    ITypeface _typeface
+    ITypeface _typeface,
+    string[] memory _tierNames
   ) external;
 }

@@ -10,6 +10,7 @@ import '@jbx-protocol/juice-721-delegate/contracts/interfaces/IJBTiered721Delega
   @member baseUri A URI to use as a base for full token URIs.
   @member contractUri A URI where contract metadata can be found. 
   @member tiers The tiers to set.
+  @member tierNames The names of the tiers.
   @member store The store contract to use.
   @member owner The address that should own the delegate contract.
 */
@@ -19,6 +20,7 @@ struct DefifaDelegateData {
   string baseUri;
   string contractUri;
   JB721TierParams[] tiers;
+  string[] tierNames;
   IJBTiered721DelegateStore store;
   address owner;
 }
