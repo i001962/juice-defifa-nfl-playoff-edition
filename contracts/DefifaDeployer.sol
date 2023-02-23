@@ -291,7 +291,8 @@ contract DefifaDeployer is IDefifaDeployer, IERC721Receiver {
           lockReservedTokenChanges: false,
           lockVotingUnitChanges: false,
           lockManualMintingChanges: false
-      })
+      }),
+      _delegateData.tierNames
     );
 
     // Transfer ownership to the specified owner.

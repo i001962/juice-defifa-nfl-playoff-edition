@@ -2,14 +2,11 @@
 pragma solidity ^0.8.16;
 
 import '@jbx-protocol/juice-721-delegate/contracts/interfaces/IJB721TieredGovernance.sol';
-import 'lib/typeface/contracts/interfaces/ITypeface.sol';
 
 import './../structs/DefifaTierRedemptionWeight.sol';
 
 interface IDefifaDelegate is IJB721TieredGovernance {
   function TOTAL_REDEMPTION_WEIGHT() external returns (uint256);
-
-  function typeface() external returns (ITypeface);
 
   function tierRedemptionWeights() external returns (uint256[128] memory);
 
@@ -27,7 +24,6 @@ interface IDefifaDelegate is IJB721TieredGovernance {
     JB721PricingParams memory _pricing,
     IJBTiered721DelegateStore _store,
     JBTiered721Flags memory _flags,
-    ITypeface _typeface,
     string[] memory _tierNames
   ) external;
 }

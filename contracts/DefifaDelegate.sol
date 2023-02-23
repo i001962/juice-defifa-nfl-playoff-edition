@@ -93,16 +93,6 @@ contract DefifaDelegate is IDefifaDelegate, JB721TieredGovernance {
   mapping(uint256 => string) private _tierNameOf;
 
   //*********************************************************************//
-  // --------------------- public stored properties ------------------- //
-  //*********************************************************************//
-
-  /**
-    @notice
-    The typeface NFTs are written in.
-  */
-  ITypeface public override typeface;
-
-  //*********************************************************************//
   // ------------------------- external views -------------------------- //
   //*********************************************************************//
 
@@ -257,7 +247,7 @@ contract DefifaDelegate is IDefifaDelegate, JB721TieredGovernance {
   */
   function tokenURI(uint256 _tokenId) public view override returns (string memory) {
     // Get a reference to the tier.
-    // JB721Tier memory _tier = store.tierOfTokenId(address(this), _tokenId);
+    JB721Tier memory _tier = store.tierOfTokenId(address(this), _tokenId);
 
     _tokenId; // do something with me
     string[] memory parts = new string[](4);
@@ -275,7 +265,7 @@ contract DefifaDelegate is IDefifaDelegate, JB721TieredGovernance {
     if (bytes(_title).length < 35) _titleFontSize = '24';
     else _titleFontSize = '20';
 
-    string memory _word = _tierNameOf[0];
+    string memory _word = _tierNameOf[_tier.id];
     string memory _fontSize;
     if (bytes(_word).length < 3) _fontSize = '240';
     else if (bytes(_word).length < 5) _fontSize = '200';
@@ -341,7 +331,6 @@ contract DefifaDelegate is IDefifaDelegate, JB721TieredGovernance {
     @param _pricing The tier pricing according to which token distribution will be made. Must be passed in order of contribution floor, with implied increasing value.
     @param _store A contract that stores the NFT's data.
     @param _flags A set of flags that help define how this contract works.
-    @param _typeface The typeface NFTs are written in
   */
   function initialize(
     uint256 _projectId,
@@ -355,7 +344,6 @@ contract DefifaDelegate is IDefifaDelegate, JB721TieredGovernance {
     JB721PricingParams memory _pricing,
     IJBTiered721DelegateStore _store,
     JBTiered721Flags memory _flags,
-    ITypeface _typeface,
     string[] memory _tierNames
   ) public override {
     super.initialize(
@@ -371,8 +359,6 @@ contract DefifaDelegate is IDefifaDelegate, JB721TieredGovernance {
       _store,
       _flags
     );
-    // Store the typeface.
-    typeface = _typeface;
 
     // Keep a reference to the number of tier names.
     uint256 _numberOfTierNames = _tierNames.length;
