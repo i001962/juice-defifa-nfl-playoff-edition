@@ -9,12 +9,12 @@ import 'forge-std/Script.sol';
 
 contract DeployMainnet is Script {
   // V3 mainnet controller.
-  IJBController controller = IJBController(0xFFdD70C318915879d5192e8a0dcbFcB0285b3C98);
+  IJBController controller = IJBController(0x97a5b9D9F0F7cD676B69f584F29048D0Ef4BB59b);
   // mainnet 721 store.
   IJBTiered721DelegateStore store =
-    IJBTiered721DelegateStore(0xffB2Cd8519439A7ddcf2C933caedd938053067D2);
-  // V3 goerli Payment terminal.
-  IJBPaymentTerminal terminal = IJBPaymentTerminal(0x594Cb208b5BB48db1bcbC9354d1694998864ec63);
+    IJBTiered721DelegateStore(0x167ea060D75727Aa93C1c02873f189d22ef98856);
+  // V3 mainnet Payment terminal.
+  IJBPaymentTerminal terminal = IJBPaymentTerminal(0xFA391De95Fcbcd3157268B91d8c7af083E607A5C);
 
   address _defifaBallcats = 0x11834239698c7336EF232C00a2A9926d3375DF9D;
   // Game params.
@@ -124,13 +124,13 @@ contract DeployMainnet is Script {
 
 contract DeployGoerli is Script {
     // V3 goerli controller.
-    IJBController controller = IJBController(0x7Cb86D43B665196BC719b6974D320bf674AFb395);
+    IJBController controller = IJBController(0x1d260DE91233e650F136Bf35f8A4ea1F2b68aDB6);
     // goerli 721 store.
     IJBTiered721DelegateStore store = IJBTiered721DelegateStore(
-      0x3EA16DeFF07f031e86bd13C55961eB576cd579a6
+      0xF85DC8C2b9dFfeab95c614A306141882048dE467
     );
     // V3 goerli Payment terminal.
-    IJBPaymentTerminal terminal = IJBPaymentTerminal(0x55d4dfb578daA4d60380995ffF7a706471d7c719);
+    IJBPaymentTerminal terminal = IJBPaymentTerminal(0x0baCb87Cf7DbDdde2299D92673A938E067a9eb29);
 
   address _defifaBallcats = 0x11834239698c7336EF232C00a2A9926d3375DF9D;
   // Game params.
