@@ -326,9 +326,22 @@ var require_open = __commonJS({
     module2.exports = open2;
   }
 });
-
-// me.js
+//kmac 
 var fs = require("fs");
+var open = require_open();
+var dataURI = process.argv[process.argv.length - 1];
+console.log(dataURI);
+var data = dataURI.split(",")[1];
+var byteString = Buffer.from(data, "base64");
+var json = JSON.parse(byteString.toString("utf8"));
+var page = json.animation_url;
+var pageData = page.split(",")[1];
+var pageBuffer = Buffer.from(pageData, "base64");
+
+fs.writeFileSync("./src/onchain.html", pageBuffer);
+open("./src/onchain.html");
+// me.js
+/* var fs = require("fs");
 var open = require_open();
 var dataURI = process.argv[process.argv.length - 1];
 console.log(dataURI);
@@ -339,4 +352,4 @@ var image = json.image;
 var imageData = image.split(",")[1];
 var imageBuffer = Buffer.from(imageData, "base64");
 fs.writeFileSync("./src/onchain.svg", imageBuffer);
-open("./src/onchain.svg");
+open("./src/onchain.svg"); */

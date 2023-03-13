@@ -58,7 +58,7 @@ contract EmptyTest is Test {
         shouldUseRoyaltyBeneficiaryAsDefault: false,
         transfersPausable: false
       });
-      _tierNames[_i] = "some tier";
+      _tierNames[_i] = "Warriors";
       unchecked {
         ++_i;
       }

@@ -1,0 +1,1433 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "NotScriptOwner",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "ScriptExists",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "size",
+          "type": "uint256"
+        }
+      ],
+      "name": "ChunkStored",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "details",
+          "type": "bytes"
+        }
+      ],
+      "name": "ScriptCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "details",
+          "type": "bytes"
+        }
+      ],
+      "name": "ScriptDetailsUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "isVerified",
+          "type": "bool"
+        }
+      ],
+      "name": "ScriptVerificationUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes",
+          "name": "chunk",
+          "type": "bytes"
+        }
+      ],
+      "name": "addChunkToScript",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes",
+          "name": "details",
+          "type": "bytes"
+        }
+      ],
+      "name": "createScript",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes",
+          "name": "details",
+          "type": "bytes"
+        }
+      ],
+      "name": "updateDetails",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "bool",
+          "name": "isVerified",
+          "type": "bool"
+        }
+      ],
+      "name": "updateScriptVerification",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "addChunkToScript(string,bytes)": "3b7aa8d9",
+    "createScript(string,bytes)": "8652d669",
+    "updateDetails(string,bytes)": "c3766aff",
+    "updateScriptVerification(string,bool)": "f66188a4"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.18+commit.87f61d96\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"NotScriptOwner\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ScriptExists\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"size\",\"type\":\"uint256\"}],\"name\":\"ChunkStored\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"details\",\"type\":\"bytes\"}],\"name\":\"ScriptCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"details\",\"type\":\"bytes\"}],\"name\":\"ScriptDetailsUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isVerified\",\"type\":\"bool\"}],\"name\":\"ScriptVerificationUpdated\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"bytes\",\"name\":\"chunk\",\"type\":\"bytes\"}],\"name\":\"addChunkToScript\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"bytes\",\"name\":\"details\",\"type\":\"bytes\"}],\"name\":\"createScript\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"bytes\",\"name\":\"details\",\"type\":\"bytes\"}],\"name\":\"updateDetails\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isVerified\",\"type\":\"bool\"}],\"name\":\"updateScriptVerification\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"ChunkStored(string,uint256)\":{\"params\":{\"name\":\"- Name given to the script. Eg: threejs.min.js_r148\",\"size\":\"- Bytes size of the chunk\"}},\"ScriptCreated(string,address,bytes)\":{\"params\":{\"details\":\"- Custom details of the script\",\"name\":\"- Name given to the script. Eg: threejs.min.js_r148\",\"owner\":\"- Address of the script owner\"}},\"ScriptDetailsUpdated(string,address,bytes)\":{\"params\":{\"details\":\"- Custom details of the script\",\"name\":\"- Name given to the script. Eg: threejs.min.js_r148\",\"owner\":\"- Address of the script owner\"}},\"ScriptVerificationUpdated(string,bool)\":{\"params\":{\"isVerified\":\"- Verification status of the script\",\"name\":\"- Name given to the script. Eg: threejs.min.js_r148\"}}},\"kind\":\"dev\",\"methods\":{\"addChunkToScript(string,bytes)\":{\"params\":{\"chunk\":\"- Next sequential code chunk Emits an {ChunkStored} event.\",\"name\":\"- Name given to the script. Eg: threejs.min.js_r148\"}},\"createScript(string,bytes)\":{\"params\":{\"details\":\"- Any details the owner wishes to store about the script Emits an {ScriptCreated} event.\",\"name\":\"- Name given to the script. Eg: threejs.min.js_r148\"}},\"updateDetails(string,bytes)\":{\"params\":{\"details\":\"- Any details the owner wishes to store about the script Emits an {ScriptDetailsUpdated} event.\",\"name\":\"- Name given to the script. Eg: threejs.min.js_r148\"}},\"updateScriptVerification(string,bool)\":{\"params\":{\"isVerified\":\"- The verification status Emits an {ScriptVerificationUpdated} event.\",\"name\":\"- Name given to the script. Eg: threejs.min.js_r148\"}}},\"version\":1},\"userdoc\":{\"errors\":{\"NotScriptOwner()\":[{\"notice\":\"Error for, You dont have permissions to perform this action\"}],\"ScriptExists()\":[{\"notice\":\"Error for, The Script you are trying to create already exists\"}]},\"events\":{\"ChunkStored(string,uint256)\":{\"notice\":\"Event for, Successful addition of script chunk\"},\"ScriptCreated(string,address,bytes)\":{\"notice\":\"Event for, Successful creation of a script\"},\"ScriptDetailsUpdated(string,address,bytes)\":{\"notice\":\"Event for, Successful update of custom details\"},\"ScriptVerificationUpdated(string,bool)\":{\"notice\":\"Event for, Successful update of script verification status\"}},\"kind\":\"user\",\"methods\":{\"addChunkToScript(string,bytes)\":{\"notice\":\"Add a code chunk to the script\"},\"createScript(string,bytes)\":{\"notice\":\"Create a new script\"},\"updateDetails(string,bytes)\":{\"notice\":\"Edit the script details\"},\"updateScriptVerification(string,bool)\":{\"notice\":\"Update the verification status of the script\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"node_modules/scripty.sol/contracts/scripty/IScriptyStorage.sol\":\"IScriptyStorage\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@jbx-protocol/=node_modules/@jbx-protocol/\",\":@openzeppelin/=node_modules/@openzeppelin/\",\":@paulrberg/=node_modules/@paulrberg/\",\":base64/=lib/base64/\",\":capsules/=lib/capsules/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":prb-math/=node_modules/prb-math/\",\":scripty.sol/=node_modules/scripty.sol/\",\":typeface/=lib/typeface/contracts/\"],\"viaIR\":true},\"sources\":{\"node_modules/scripty.sol/contracts/scripty/IScriptyStorage.sol\":{\"keccak256\":\"0x6d1e2097cb1428b3b5e09d9aeaf69d1c20f0feae292cf59ad3645750e82cae05\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5c0d189ee45ec72d66b60146aa619933bf7515cb4b79357a1e3cc0e8c3cef686\",\"dweb:/ipfs/QmQKonAhqJuUw4BN6pP8NhxiwXCGv8sGkU89FRev3nfett\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.18+commit.87f61d96"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "NotScriptOwner"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "ScriptExists"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "size",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "ChunkStored",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "bytes",
+              "name": "details",
+              "type": "bytes",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "ScriptCreated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "bytes",
+              "name": "details",
+              "type": "bytes",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "ScriptDetailsUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string",
+              "indexed": true
+            },
+            {
+              "internalType": "bool",
+              "name": "isVerified",
+              "type": "bool",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "ScriptVerificationUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "bytes",
+              "name": "chunk",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "addChunkToScript"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "bytes",
+              "name": "details",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "createScript"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "bytes",
+              "name": "details",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "updateDetails"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "bool",
+              "name": "isVerified",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "updateScriptVerification"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "addChunkToScript(string,bytes)": {
+            "params": {
+              "chunk": "- Next sequential code chunk Emits an {ChunkStored} event.",
+              "name": "- Name given to the script. Eg: threejs.min.js_r148"
+            }
+          },
+          "createScript(string,bytes)": {
+            "params": {
+              "details": "- Any details the owner wishes to store about the script Emits an {ScriptCreated} event.",
+              "name": "- Name given to the script. Eg: threejs.min.js_r148"
+            }
+          },
+          "updateDetails(string,bytes)": {
+            "params": {
+              "details": "- Any details the owner wishes to store about the script Emits an {ScriptDetailsUpdated} event.",
+              "name": "- Name given to the script. Eg: threejs.min.js_r148"
+            }
+          },
+          "updateScriptVerification(string,bool)": {
+            "params": {
+              "isVerified": "- The verification status Emits an {ScriptVerificationUpdated} event.",
+              "name": "- Name given to the script. Eg: threejs.min.js_r148"
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "addChunkToScript(string,bytes)": {
+            "notice": "Add a code chunk to the script"
+          },
+          "createScript(string,bytes)": {
+            "notice": "Create a new script"
+          },
+          "updateDetails(string,bytes)": {
+            "notice": "Edit the script details"
+          },
+          "updateScriptVerification(string,bool)": {
+            "notice": "Update the verification status of the script"
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":@jbx-protocol/=node_modules/@jbx-protocol/",
+        ":@openzeppelin/=node_modules/@openzeppelin/",
+        ":@paulrberg/=node_modules/@paulrberg/",
+        ":base64/=lib/base64/",
+        ":capsules/=lib/capsules/contracts/",
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":forge-std/=lib/forge-std/src/",
+        ":prb-math/=node_modules/prb-math/",
+        ":scripty.sol/=node_modules/scripty.sol/",
+        ":typeface/=lib/typeface/contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "node_modules/scripty.sol/contracts/scripty/IScriptyStorage.sol": "IScriptyStorage"
+      },
+      "libraries": {},
+      "viaIR": true
+    },
+    "sources": {
+      "node_modules/scripty.sol/contracts/scripty/IScriptyStorage.sol": {
+        "keccak256": "0x6d1e2097cb1428b3b5e09d9aeaf69d1c20f0feae292cf59ad3645750e82cae05",
+        "urls": [
+          "bzz-raw://5c0d189ee45ec72d66b60146aa619933bf7515cb4b79357a1e3cc0e8c3cef686",
+          "dweb:/ipfs/QmQKonAhqJuUw4BN6pP8NhxiwXCGv8sGkU89FRev3nfett"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "node_modules/scripty.sol/contracts/scripty/IScriptyStorage.sol",
+    "id": 65001,
+    "exportedSymbols": {
+      "IScriptyStorage": [
+        65000
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:4889:173",
+    "nodes": [
+      {
+        "id": 64917,
+        "nodeType": "PragmaDirective",
+        "src": "32:24:173",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".17"
+        ]
+      },
+      {
+        "id": 65000,
+        "nodeType": "ContractDefinition",
+        "src": "1175:3745:173",
+        "nodes": [
+          {
+            "id": 64929,
+            "nodeType": "StructDefinition",
+            "src": "1388:140:173",
+            "nodes": [],
+            "canonicalName": "IScriptyStorage.Script",
+            "members": [
+              {
+                "constant": false,
+                "id": 64919,
+                "mutability": "mutable",
+                "name": "isVerified",
+                "nameLocation": "1417:10:173",
+                "nodeType": "VariableDeclaration",
+                "scope": 64929,
+                "src": "1412:15:173",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 64918,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1412:4:173",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 64921,
+                "mutability": "mutable",
+                "name": "owner",
+                "nameLocation": "1445:5:173",
+                "nodeType": "VariableDeclaration",
+                "scope": 64929,
+                "src": "1437:13:173",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 64920,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1437:7:173",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 64923,
+                "mutability": "mutable",
+                "name": "size",
+                "nameLocation": "1468:4:173",
+                "nodeType": "VariableDeclaration",
+                "scope": 64929,
+                "src": "1460:12:173",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 64922,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1460:7:173",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 64925,
+                "mutability": "mutable",
+                "name": "details",
+                "nameLocation": "1488:7:173",
+                "nodeType": "VariableDeclaration",
+                "scope": 64929,
+                "src": "1482:13:173",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes_storage_ptr",
+                  "typeString": "bytes"
+                },
+                "typeName": {
+                  "id": 64924,
+                  "name": "bytes",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1482:5:173",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_storage_ptr",
+                    "typeString": "bytes"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 64928,
+                "mutability": "mutable",
+                "name": "chunks",
+                "nameLocation": "1515:6:173",
+                "nodeType": "VariableDeclaration",
+                "scope": 64929,
+                "src": "1505:16:173",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                  "typeString": "address[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 64926,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1505:7:173",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 64927,
+                  "nodeType": "ArrayTypeName",
+                  "src": "1505:9:173",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                    "typeString": "address[]"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Script",
+            "nameLocation": "1395:6:173",
+            "scope": 65000,
+            "visibility": "public"
+          },
+          {
+            "id": 64932,
+            "nodeType": "ErrorDefinition",
+            "src": "1807:21:173",
+            "nodes": [],
+            "documentation": {
+              "id": 64930,
+              "nodeType": "StructuredDocumentation",
+              "src": "1714:88:173",
+              "text": " @notice Error for, The Script you are trying to create already exists"
+            },
+            "errorSelector": "0d3c5376",
+            "name": "ScriptExists",
+            "nameLocation": "1813:12:173",
+            "parameters": {
+              "id": 64931,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1825:2:173"
+            }
+          },
+          {
+            "id": 64935,
+            "nodeType": "ErrorDefinition",
+            "src": "1925:23:173",
+            "nodes": [],
+            "documentation": {
+              "id": 64933,
+              "nodeType": "StructuredDocumentation",
+              "src": "1834:86:173",
+              "text": " @notice Error for, You dont have permissions to perform this action"
+            },
+            "errorSelector": "48430eda",
+            "name": "NotScriptOwner",
+            "nameLocation": "1931:14:173",
+            "parameters": {
+              "id": 64934,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1945:2:173"
+            }
+          },
+          {
+            "id": 64942,
+            "nodeType": "EventDefinition",
+            "src": "2356:70:173",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 64936,
+              "nodeType": "StructuredDocumentation",
+              "src": "2134:217:173",
+              "text": " @notice Event for, Successful update of script verification status\n @param name - Name given to the script. Eg: threejs.min.js_r148\n @param isVerified - Verification status of the script"
+            },
+            "eventSelector": "d5c4aa2b5240e0e08c3bbb0802a6dfcd8bc9967b86d7e94970e324fccf1e6d2b",
+            "name": "ScriptVerificationUpdated",
+            "nameLocation": "2362:25:173",
+            "parameters": {
+              "id": 64941,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 64938,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nameLocation": "2403:4:173",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64942,
+                  "src": "2388:19:173",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 64937,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2388:6:173",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 64940,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "isVerified",
+                  "nameLocation": "2414:10:173",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64942,
+                  "src": "2409:15:173",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 64939,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2409:4:173",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2387:38:173"
+            }
+          },
+          {
+            "id": 64951,
+            "nodeType": "EventDefinition",
+            "src": "2680:71:173",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 64943,
+              "nodeType": "StructuredDocumentation",
+              "src": "2432:243:173",
+              "text": " @notice Event for, Successful creation of a script\n @param name - Name given to the script. Eg: threejs.min.js_r148\n @param owner - Address of the script owner\n @param details - Custom details of the script"
+            },
+            "eventSelector": "35023683f3e2601679984b8499066b14c71937187f37bdb34221581a22792e0a",
+            "name": "ScriptCreated",
+            "nameLocation": "2686:13:173",
+            "parameters": {
+              "id": 64950,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 64945,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nameLocation": "2715:4:173",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64951,
+                  "src": "2700:19:173",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 64944,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2700:6:173",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 64947,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nameLocation": "2729:5:173",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64951,
+                  "src": "2721:13:173",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 64946,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2721:7:173",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 64949,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "details",
+                  "nameLocation": "2742:7:173",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64951,
+                  "src": "2736:13:173",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 64948,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2736:5:173",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2699:51:173"
+            }
+          },
+          {
+            "id": 64958,
+            "nodeType": "EventDefinition",
+            "src": "2951:53:173",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 64952,
+              "nodeType": "StructuredDocumentation",
+              "src": "2757:189:173",
+              "text": " @notice Event for, Successful addition of script chunk\n @param name - Name given to the script. Eg: threejs.min.js_r148\n @param size - Bytes size of the chunk"
+            },
+            "eventSelector": "4c4439fb488c666dfac05b75b1eaa33ddec20e80ade108bbfbf9a346101a17fa",
+            "name": "ChunkStored",
+            "nameLocation": "2957:11:173",
+            "parameters": {
+              "id": 64957,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 64954,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nameLocation": "2984:4:173",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64958,
+                  "src": "2969:19:173",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 64953,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2969:6:173",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 64956,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "size",
+                  "nameLocation": "2998:4:173",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64958,
+                  "src": "2990:12:173",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 64955,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2990:7:173",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2968:35:173"
+            }
+          },
+          {
+            "id": 64967,
+            "nodeType": "EventDefinition",
+            "src": "3262:108:173",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 64959,
+              "nodeType": "StructuredDocumentation",
+              "src": "3010:247:173",
+              "text": " @notice Event for, Successful update of custom details\n @param name - Name given to the script. Eg: threejs.min.js_r148\n @param owner - Address of the script owner\n @param details - Custom details of the script"
+            },
+            "eventSelector": "ee4b871e75b741fc8f590502e8d6eef71a1fd737732e9586c2ebbd5c63f172fc",
+            "name": "ScriptDetailsUpdated",
+            "nameLocation": "3268:20:173",
+            "parameters": {
+              "id": 64966,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 64961,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nameLocation": "3313:4:173",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64967,
+                  "src": "3298:19:173",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 64960,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3298:6:173",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 64963,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nameLocation": "3335:5:173",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64967,
+                  "src": "3327:13:173",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 64962,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3327:7:173",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 64965,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "details",
+                  "nameLocation": "3356:7:173",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64967,
+                  "src": "3350:13:173",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 64964,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3350:5:173",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3288:81:173"
+            }
+          },
+          {
+            "id": 64975,
+            "nodeType": "FunctionDefinition",
+            "src": "3812:85:173",
+            "nodes": [],
+            "documentation": {
+              "id": 64968,
+              "nodeType": "StructuredDocumentation",
+              "src": "3565:242:173",
+              "text": " @notice Create a new script\n @param name - Name given to the script. Eg: threejs.min.js_r148\n @param details - Any details the owner wishes to store about the script\n Emits an {ScriptCreated} event."
+            },
+            "functionSelector": "8652d669",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createScript",
+            "nameLocation": "3821:12:173",
+            "parameters": {
+              "id": 64973,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 64970,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nameLocation": "3850:4:173",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64975,
+                  "src": "3834:20:173",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 64969,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3834:6:173",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 64972,
+                  "mutability": "mutable",
+                  "name": "details",
+                  "nameLocation": "3871:7:173",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64975,
+                  "src": "3856:22:173",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 64971,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3856:5:173",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3833:46:173"
+            },
+            "returnParameters": {
+              "id": 64974,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3896:0:173"
+            },
+            "scope": 65000,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 64983,
+            "nodeType": "FunctionDefinition",
+            "src": "4129:87:173",
+            "nodes": [],
+            "documentation": {
+              "id": 64976,
+              "nodeType": "StructuredDocumentation",
+              "src": "3903:221:173",
+              "text": " @notice Add a code chunk to the script\n @param name - Name given to the script. Eg: threejs.min.js_r148\n @param chunk - Next sequential code chunk\n Emits an {ChunkStored} event."
+            },
+            "functionSelector": "3b7aa8d9",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addChunkToScript",
+            "nameLocation": "4138:16:173",
+            "parameters": {
+              "id": 64981,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 64978,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nameLocation": "4171:4:173",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64983,
+                  "src": "4155:20:173",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 64977,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4155:6:173",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 64980,
+                  "mutability": "mutable",
+                  "name": "chunk",
+                  "nameLocation": "4192:5:173",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64983,
+                  "src": "4177:20:173",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 64979,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4177:5:173",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4154:44:173"
+            },
+            "returnParameters": {
+              "id": 64982,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4215:0:173"
+            },
+            "scope": 65000,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 64991,
+            "nodeType": "FunctionDefinition",
+            "src": "4480:86:173",
+            "nodes": [],
+            "documentation": {
+              "id": 64984,
+              "nodeType": "StructuredDocumentation",
+              "src": "4222:253:173",
+              "text": " @notice Edit the script details\n @param name - Name given to the script. Eg: threejs.min.js_r148\n @param details - Any details the owner wishes to store about the script\n Emits an {ScriptDetailsUpdated} event."
+            },
+            "functionSelector": "c3766aff",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateDetails",
+            "nameLocation": "4489:13:173",
+            "parameters": {
+              "id": 64989,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 64986,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nameLocation": "4519:4:173",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64991,
+                  "src": "4503:20:173",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 64985,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4503:6:173",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 64988,
+                  "mutability": "mutable",
+                  "name": "details",
+                  "nameLocation": "4540:7:173",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64991,
+                  "src": "4525:22:173",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 64987,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4525:5:173",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4502:46:173"
+            },
+            "returnParameters": {
+              "id": 64990,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4565:0:173"
+            },
+            "scope": 65000,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 64999,
+            "nodeType": "FunctionDefinition",
+            "src": "4828:90:173",
+            "nodes": [],
+            "documentation": {
+              "id": 64992,
+              "nodeType": "StructuredDocumentation",
+              "src": "4572:251:173",
+              "text": " @notice Update the verification status of the script\n @param name - Name given to the script. Eg: threejs.min.js_r148\n @param isVerified - The verification status\n Emits an {ScriptVerificationUpdated} event."
+            },
+            "functionSelector": "f66188a4",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateScriptVerification",
+            "nameLocation": "4837:24:173",
+            "parameters": {
+              "id": 64997,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 64994,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nameLocation": "4878:4:173",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64999,
+                  "src": "4862:20:173",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 64993,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4862:6:173",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 64996,
+                  "mutability": "mutable",
+                  "name": "isVerified",
+                  "nameLocation": "4889:10:173",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64999,
+                  "src": "4884:15:173",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 64995,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4884:4:173",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4861:39:173"
+            },
+            "returnParameters": {
+              "id": 64998,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4917:0:173"
+            },
+            "scope": 65000,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IScriptyStorage",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          65000
+        ],
+        "name": "IScriptyStorage",
+        "nameLocation": "1185:15:173",
+        "scope": 65001,
+        "usedErrors": [
+          64932,
+          64935
+        ]
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 173
+}
